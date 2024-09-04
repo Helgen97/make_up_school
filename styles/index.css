@@ -51,6 +51,9 @@ button {
   background-color: inherit;
   cursor: pointer;
 }
+button svg {
+  display: block;
+}
 button.default-btn {
   position: relative;
   padding: 1.125rem 3rem;
@@ -60,20 +63,23 @@ button.default-btn {
   transition: color 0.6s linear;
   z-index: 0;
 }
-button.default-btn:hover {
-  color: #FFFFFF;
-}
-button.default-btn:hover::before {
+button.default-btn::before {
   position: absolute;
   content: "";
   top: 0;
   left: 0;
   height: 100%;
-  animation: 0.6s linear backgroundFill forwards;
+  animation: 0.6s linear backgroundFillOut forwards;
   z-index: -1;
 }
+button.default-btn:hover {
+  color: #FFFFFF;
+}
+button.default-btn:hover::before {
+  animation: 0.6s linear backgroundFillIn forwards;
+}
 
-@keyframes backgroundFill {
+@keyframes backgroundFillIn {
   from {
     width: 0%;
   }
@@ -82,10 +88,42 @@ button.default-btn:hover::before {
     background-color: #EF2F7C;
   }
 }
+@keyframes backgroundFillOut {
+  from {
+    width: 100%;
+    background-color: #EF2F7C;
+  }
+  to {
+    width: 0%;
+  }
+}
 h1 {
   font-family: "Roboto Slab", serif;
   font-weight: 700;
   font-size: 2rem;
+}
+
+h2 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: 1.1825rem;
+}
+
+input {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  color: #5E5E5E;
+  background-color: #F5C3D5;
+  border: 0;
+  border-top: 2px solid #FFFFFF;
+}
+input:focus, input:active {
+  border: 0;
 }
 
 section {
@@ -94,7 +132,11 @@ section {
   grid-template-rows: 1fr;
   grid-column-gap: 32px;
   grid-row-gap: 0px;
-  padding-inline: 1.25rem;
+  padding-inline: clamp(1.25rem, 2.4dvw, 5rem);
+}
+
+.grid-area {
+  grid-area: 1/1/2/4;
 }
 
 @media screen and (min-width: 743px) {
@@ -102,12 +144,95 @@ section {
     grid-template-columns: repeat(12, 1fr);
     padding-inline: 5rem;
   }
+  .grid-area {
+    grid-area: 1/1/2/13;
+  }
 }
 @media screen and (min-width: 1439px) {
   section {
     padding-inline: 12.5rem;
   }
+  .grid-area {
+    grid-area: 1/1/2/13;
+  }
 }
+.up_btn-box,
+.call_btn-container,
+.call_btn-box {
+  position: relative;
+}
+
+.up_btn,
+.call_btn {
+  position: fixed;
+  bottom: 1.25rem;
+  padding: 0.5rem;
+  background-color: #EF2F7C;
+  z-index: 1;
+}
+
+.up_btn {
+  width: 3rem;
+  height: 3rem;
+  left: 1.25rem;
+  border-radius: 25px;
+  animation: 1.25s linear buttonRotate infinite alternate;
+}
+
+.call_btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  right: 1.25rem;
+  border-radius: 1.75rem;
+  animation: 1.25s linear buttonScale infinite alternate;
+}
+
+@keyframes buttonScale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes buttonRotate {
+  from {
+    transform: rotateZ(-10deg);
+  }
+  to {
+    transform: rotateZ(10deg);
+  }
+}
+@media screen and (min-width: 743px) {
+  .up_btn {
+    left: 1.5rem;
+  }
+  .call_btn {
+    right: 1.5rem;
+  }
+}
+@media screen and (min-width: 1439px) {
+  .up_btn {
+    left: 3rem;
+  }
+  .call_btn {
+    right: 3rem;
+  }
+}
+.call_modal {
+  display: none;
+  position: fixed;
+  width: 280px;
+  height: 337px;
+  bottom: 5rem;
+  right: 1.5rem;
+  padding: 1.5rem 1rem;
+  background-color: #FCE3EC;
+  border: 2px solid #EF2F7C;
+  text-align: center;
+  z-index: 2;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -202,7 +327,6 @@ header {
 }
 
 .main_screen {
-  grid-area: 1/1/2/4;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -218,12 +342,89 @@ header {
 }
 
 @media screen and (min-width: 743px) {
-  .main_screen {
+  .main_screen.grid-area {
     grid-area: 1/3/2/11;
   }
 }
 @media screen and (min-width: 1439px) {
-  .main_screen {
+  .main_screen.grid-area {
     grid-area: 1/4/2/10;
+  }
+}
+.school {
+  display: flex;
+  flex-direction: column;
+}
+
+.school_description-block {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.school_title {
+  padding-bottom: 1.5rem;
+}
+
+.school_description {
+  font-family: "Source Serif Pro";
+  font-weight: 400;
+}
+.school_description:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.school_image-block {
+  position: relative;
+  margin-top: 2rem;
+  text-align: center;
+  z-index: 0;
+}
+.school_image-block::before {
+  position: absolute;
+  content: "";
+  top: -0.5rem;
+  left: -1.25rem;
+  width: 100dvw;
+  height: 100%;
+  background-color: #FCE3EC;
+  z-index: -1;
+}
+
+.school_image {
+  padding-block: 1rem;
+}
+
+@media screen and (min-width: 743px) {
+  .school {
+    display: grid;
+  }
+  .school_description-block {
+    grid-area: 1/2/2/8;
+  }
+  .school_image-block {
+    grid-area: 1/8/2/13;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .school_image-block::before {
+    width: calc(100% + 6.5rem);
+    height: 356px;
+    top: -0.5rem;
+    left: -1.5rem;
+  }
+  .school_image {
+    height: 340px;
+  }
+}
+@media screen and (min-width: 1439px) {
+  .school_image-block::before {
+    width: calc(100% + 12.5rem + 1.5rem);
+    height: 284px;
+    top: -0.5rem;
+    left: -1.5rem;
+  }
+  .school_image {
+    height: 268px;
   }
 }/*# sourceMappingURL=index.css.map */

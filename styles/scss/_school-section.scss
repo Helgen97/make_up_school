@@ -1,0 +1,88 @@
+.school {
+    display: flex;
+    flex-direction: column;
+}
+
+.school_description-block {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.school_title {
+  padding-bottom: 1.5rem;
+}
+
+.school_description {
+  font-family: $font-regular;
+  font-weight: 400;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.school_image-block {
+  position: relative;
+  margin-top: 2rem;
+  text-align: center;
+  z-index: 0;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -0.5rem;
+    left: -1.25rem;
+    width: calc(100dvw);
+    height: 100%;
+    background-color: $color-mimi-pink;
+    z-index: -1;
+  }
+}
+
+.school_image {
+  padding-block: 1rem;
+}
+
+@media screen and (min-width: $tablet) {
+
+    .school {
+        display: grid;
+    }
+
+  .school_description-block {
+    grid-area: 1 / 2 / 2 / 8;
+  }
+
+
+  .school_image-block {
+    grid-area: 1 / 8 / 2 / 13;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+
+    &::before {
+      width: calc(100% + 6.5rem);
+      height: 356px;
+      top: -.5rem;
+      left: -1.5rem;
+    }
+  }
+
+  .school_image {
+    height: 340px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+
+    .school_image-block::before {
+        width: calc(100% + 12.5rem + 1.5rem);
+        height: 284px;
+        top: -.5rem;
+        left: -1.5rem;
+    }
+  
+    .school_image {
+      height: 268px;
+    }
+  }

@@ -37,6 +37,10 @@ button {
   background-color: inherit;
   cursor: pointer;
 
+  svg {
+    display: block;
+  }
+
   &.default-btn {
     position: relative;
     padding: 1.125rem 3rem;
@@ -46,23 +50,27 @@ button {
     transition: color 0.6s linear;
     z-index: 0;
 
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      animation: 0.6s linear backgroundFillOut forwards;
+      z-index: -1;
+    }
+
     &:hover {
       color: $color-white;
 
       &::before {
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        height: 100%;
-        animation: 0.6s linear backgroundFill forwards;
-        z-index: -1;
+        animation: 0.6s linear backgroundFillIn forwards;
       }
     }
   }
 }
 
-@keyframes backgroundFill {
+@keyframes backgroundFillIn {
   from {
     width: 0%;
   }
@@ -73,10 +81,46 @@ button {
   }
 }
 
+@keyframes backgroundFillOut {
+  from {
+    width: 100%;
+    background-color: $color-rose;
+  }
+
+  to {
+    width: 0%;
+  }
+}
+
 h1 {
   font-family: $font-headers;
   font-weight: 700;
   font-size: 2rem;
+}
+
+h2 {
+  font-family: $font-headers;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-family: $font-headers; 
+  font-weight: 700;
+  font-size: 1.1825rem;
+}
+
+input {
+  padding: .5rem 0 .5rem 1.5rem;
+  color: $color-gray;
+  background-color: $color-fairy_tale;
+  border: 0;
+  border-top: 2px solid $color-white;
+
+  &:focus,
+  &:active {
+    border: 0;
+  }
 }
 
 section {
@@ -85,7 +129,11 @@ section {
   grid-template-rows: 1fr;
   grid-column-gap: 32px;
   grid-row-gap: 0px;
-  padding-inline: 1.25rem;
+  padding-inline: clamp(1.25rem, 2.4dvw, 5rem);
+}
+
+.grid-area {
+  grid-area: 1 / 1 / 2 / 4;
 }
 
 @media screen and (min-width: $tablet) {
@@ -93,12 +141,20 @@ section {
     grid-template-columns: repeat(12, 1fr);
     padding-inline: 5rem;
   }
+
+  .grid-area {
+    grid-area: 1 / 1 / 2 / 13;
+  }
 }
 
 @media screen and (min-width: $desktop) {
   section {
     padding-inline: 12.5rem;
   }
+
+  .grid-area {
+    grid-area: 1 / 1 / 2 / 13;
+  }
 }
 
-@import "header", "main";
+@import "up_and_call-buttons", "call-modal", "header", "main", "school-section";

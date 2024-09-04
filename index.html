@@ -42,6 +42,47 @@
 </head>
 
 <body>
+    <div class="up_btn-box">
+        <button class="up_btn">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M21.779 3.66663H10.2203C6.19366 3.66663 3.66699 6.51863 3.66699 10.5546V21.4453C3.66699 25.4813 6.18033 28.3333 10.2203 28.3333H21.779C25.819 28.3333 28.3336 25.4813 28.3336 21.4453V10.5546C28.3336 6.51863 25.819 3.66663 21.779 3.66663Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16 10.5519V21.4478" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M11.0029 15.5703L16.0003 10.5516L20.9976 15.5703" stroke="white" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+    <div class="call_btn-container">
+        <div class="call_btn-box">
+            <button class="call_btn">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.4" d="M23.9219 4.16663C30.0902 4.85163 34.9635 9.71829 35.6552 15.8866"
+                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path opacity="0.4" d="M23.9219 10.0715C26.8735 10.6449 29.1802 12.9532 29.7552 15.9049"
+                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M18.386 20.7873C25.0343 27.434 26.5425 19.7445 30.7757 23.9746C34.8565 28.0546 37.2038 28.872 32.0315 34.0411C31.3838 34.5616 27.269 40.8238 12.8076 26.3661C-1.65552 11.9066 4.60278 7.78736 5.12339 7.13987C10.3064 1.95637 11.1115 4.31559 15.1925 8.39551C19.4237 12.6275 11.7377 14.1406 18.386 20.7873Z"
+                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="call_modal">
+                <h3>
+                    Залиште свій номер і ми вам зателефонуємо
+                </h3>
+               <form action="#">
+                <input type="tel" inputmode="tel" placeholder="+380(XX)XXXXXXX">
+                <button class="default-btn">Передзвоніть</button>
+               </form>
+               <p>
+                Або ви можете зателефонувати нам:
+               </p>
+               <a href="tel:+380 (67) 566-11-77">+380 (67) 566-11-77</a>
+            </div>
+        </div>
+    </div>
     <header>
         <div class="mobile_menu-box">
             <button class="mobile_menu-button">
@@ -135,7 +176,7 @@
         </div>
     </header>
     <section class="main">
-        <div class='main_screen'>
+        <div class='main_screen grid-area'>
             <div class="main-title">
                 <h1>Школа макіяжу</h1>
             </div>
@@ -153,7 +194,8 @@
                     </g>
                     <defs>
                         <pattern id="pattern0_79_283" patternContentUnits="objectBoundingBox" width="1" height="1">
-                            <use xlink:href="#image0_79_283" transform="matrix(0.00108696 0 0 0.00136009 0 -0.0181958)" />
+                            <use xlink:href="#image0_79_283"
+                                transform="matrix(0.00108696 0 0 0.00136009 0 -0.0181958)" />
                         </pattern>
                         <clipPath id="clip0_79_283">
                             <rect width="176" height="147" fill="white" />
@@ -173,6 +215,30 @@
             </button>
         </div>
     </section>
+    <section class="school">
+        <div class="school_description-block">
+            <h2 class="school_title">Про школу</h2>
+            <p class="school_description">
+                OLENA BULAKH Make Up School є провідною школою візажу в Україні, заснованій Оленою Булах.
+            </p>
+            <p class="school_description">
+                Наша професійна команда молодих, талановитих і амбітних викладачів - наша гордість!
+            </p>
+            <p class="school_description">
+                Ми вклали усі свої знання та практичний досвід в створення наших авторських курсів для практикуючих
+                візажистів, а також наш унікальний базовий курс для початківців, якому немає аналогів.
+            </p>
+        </div>
+        <div class="school_image-block">
+            <img src="./images/about-school-ph.png" class="school_image">
+        </div>
+    </section>
+    <div>
+
+    </div>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

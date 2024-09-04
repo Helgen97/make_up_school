@@ -1,0 +1,68 @@
+.up_btn-box,
+.call_btn-container,
+.call_btn-box {
+  position: relative;
+}
+
+.up_btn,
+.call_btn {
+  position: fixed;
+  bottom: 1.25rem;
+  padding: 0.5rem;
+  background-color: $color-rose;
+  z-index: 1;
+}
+
+.up_btn {
+  width: 3rem;
+  height: 3rem;
+  left: 1.25rem;
+  border-radius: 25px;
+  animation: 1.25s linear buttonRotate infinite alternate;
+}
+
+.call_btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  right: 1.25rem;
+  border-radius: 1.75rem;
+  animation: 1.25s linear buttonScale infinite alternate;
+}
+
+@keyframes buttonScale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes buttonRotate {
+  from {
+    transform: rotateZ(-10deg);
+  }
+
+  to {
+    transform: rotateZ(10deg);
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .up_btn {
+      left: 1.5rem;
+  }
+  .call_btn {
+    right: 1.5rem;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .up_btn {
+      left: 3rem;
+  }
+  .call_btn {
+    right: 3rem;
+  }
+}

@@ -1,0 +1,17 @@
+.call_modal {
+    display: none;
+    position: fixed;
+    width: 280px;
+    height: 337px;
+    bottom: calc(3.5rem + 1.5rem);
+    right: 1.5rem;
+    padding: 1.5rem 1rem;
+    background-color: $color-mimi_pink;
+    border: 2px solid $color-rose;
+    text-align: center;
+    z-index: 2;
+}
+
+@media screen and (min-width: $tablet) {}
+
+@media screen and (min-width: $desktop) {}
