@@ -38,6 +38,8 @@
 
     <link rel="stylesheet" href="./styles/normalize.css" />
     <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="./styles/index.css" />
 </head>
 
@@ -72,14 +74,43 @@
                 <h3>
                     Залиште свій номер і ми вам зателефонуємо
                 </h3>
-               <form action="#">
-                <input type="tel" inputmode="tel" placeholder="+380(XX)XXXXXXX">
-                <button class="default-btn">Передзвоніть</button>
-               </form>
-               <p>
-                Або ви можете зателефонувати нам:
-               </p>
-               <a href="tel:+380 (67) 566-11-77">+380 (67) 566-11-77</a>
+                <form action="#">
+                    <input type="tel" inputmode="tel" placeholder="+380(XX)XXXXXXX">
+                    <button class="default-btn">Передзвоніть</button>
+                </form>
+                <!-- <div>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M27.224 4.58374H12.7757C7.74065 4.58374 4.58398 8.14874 4.58398 13.1937V26.807C4.58398 31.852 7.72565 35.417 12.7757 35.417H27.2224C32.274 35.417 35.4174 31.852 35.4174 26.807V13.1937C35.4174 8.14874 32.274 4.58374 27.224 4.58374Z"
+                            stroke="#28A745" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path opacity="0.4" d="M14.0664 20.0003L18.023 23.9553L25.933 16.0453" stroke="#28A745"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p>Номер отримано</p>
+                    <p>Чекайте нашого дзвіночка</p>
+                </div> -->
+                <!-- <div>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4"
+                            d="M18.751 27.1162C18.751 26.4262 19.311 25.8562 20.001 25.8562C20.691 25.8562 21.251 26.4079 21.251 27.0979V27.1162C21.251 27.8062 20.691 28.3662 20.001 28.3662C19.311 28.3662 18.751 27.8062 18.751 27.1162Z"
+                            fill="#FF3333" />
+                        <path
+                            d="M7.9929 34.03H32.1295C34.0412 33.93 35.5112 32.3017 35.4129 30.39C35.3912 30.0033 35.3079 29.6217 35.1612 29.265L23.0329 8.03829C22.1062 6.36329 19.9979 5.75663 18.3229 6.68496C17.7529 6.99829 17.2829 7.46829 16.9679 8.03829L4.83957 29.265C4.11957 31.0383 4.9729 33.0583 6.74457 33.78C7.10457 33.925 7.48457 34.0083 7.87124 34.03"
+                            stroke="#FF3333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path opacity="0.4" d="M19.9834 22.3268V17.1602" stroke="#FF3333" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <p>Упс...</p>
+                    <p>Сталася помилка</p>
+                    <p>Спробуйте ще раз.</p>
+                </div> -->
+                <div>
+                    <p>
+                        Або ви можете зателефонувати нам:
+                    </p>
+                    <a href="tel:+380 (67) 566-11-77">+380 (67) 566-11-77</a>
+                </div>
             </div>
         </div>
     </div>
@@ -233,9 +264,124 @@
             <img src="./images/about-school-ph.png" class="school_image">
         </div>
     </section>
-    <div>
-
-    </div>
+    <section class="courses">
+        <div class="courses_screen grid-area">
+            <h2>Наші курси</h2>
+            <div class="courses_box">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="course_block">
+                                <div>
+                                    <img class="course_img" src="./images/course image.jpg" alt="">
+                                </div>
+                                <h3 class="course_title">Make Up Basic</h3>
+                                <div class="courses_details">
+                                    <div class="course_detail">
+                                        <p class="course_detail-title">
+                                            Початок навчання:
+                                        </p>
+                                        <p class="course_detail-text">
+                                            Кожні 3 тижні
+                                        </p>
+                                    </div>
+                                    <div class="course_detail">
+                                        <p class="course_detail-title">
+                                            Вартість:
+                                        </p>
+                                        <p class="course_detail-text">
+                                            14900 грн
+                                        </p>
+                                    </div>
+                                    <div class="course_detail">
+                                        <p class="course_detail-title">
+                                            К-сть занять:
+                                        </p>
+                                        <p class="course_detail-text">
+                                            20 занять + 1 індивідуальний тренінг
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="default-btn">Детальніше</button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="course_block">
+                                <div>
+                                    <img class="course_img" src="./images/course image.jpg" alt="">
+                                </div>
+                                <h3 class="course_title">Make Up Basic</h3>
+                                <div class="courses_details">
+                                    <div class="course_detail">
+                                        <p class="course_detail-title">
+                                            Початок навчання:
+                                        </p>
+                                        <p class="course_detail-text">
+                                            Кожні 3 тижні
+                                        </p>
+                                    </div>
+                                    <div class="course_detail">
+                                        <p class="course_detail-title">
+                                            Вартість:
+                                        </p>
+                                        <p class="course_detail-text">
+                                            14900 грн
+                                        </p>
+                                    </div>
+                                    <div class="course_detail">
+                                        <p class="course_detail-title">
+                                            К-сть занять:
+                                        </p>
+                                        <p class="course_detail-text">
+                                            20 занять + 1 індивідуальний тренінг
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="default-btn">Детальніше</button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="course_block">
+                                <div>
+                                    <img class="course_img" src="./images/course image.jpg" alt="">
+                                </div>
+                                <h3 class="course_title">Make Up Basic</h3>
+                                <div class="courses_details">
+                                    <div class="course_detail">
+                                        <p class="course_detail-title">
+                                            Початок навчання:
+                                        </p>
+                                        <p class="course_detail-text">
+                                            Кожні 3 тижні
+                                        </p>
+                                    </div>
+                                    <div class="course_detail">
+                                        <p class="course_detail-title">
+                                            Вартість:
+                                        </p>
+                                        <p class="course_detail-text">
+                                            14900 грн
+                                        </p>
+                                    </div>
+                                    <div class="course_detail">
+                                        <p class="course_detail-title">
+                                            К-сть занять:
+                                        </p>
+                                        <p class="course_detail-text">
+                                            20 занять + 1 індивідуальний тренінг
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="default-btn">Детальніше</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+    </section>
 
     <script src="./js/jquery.js"></script>
     <script src="./js/main.js"></script>

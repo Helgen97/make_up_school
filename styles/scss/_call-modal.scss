@@ -1,17 +1,46 @@
 .call_modal {
-    display: none;
-    position: fixed;
-    width: 280px;
-    height: 337px;
-    bottom: calc(3.5rem + 1.5rem);
-    right: 1.5rem;
-    padding: 1.5rem 1rem;
-    background-color: $color-mimi_pink;
-    border: 2px solid $color-rose;
-    text-align: center;
-    z-index: 2;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 280px;
+  height: 337px;
+  bottom: calc(3.5rem + 1.5rem);
+  right: 1.25rem;
+  padding: 1.5rem 1rem;
+  background-color: $color-mimi_pink;
+  border: 2px solid $color-rose;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  z-index: 2;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .default-btn {
+    width: fit-content;
+  }
 }
 
-@media screen and (min-width: $tablet) {}
+.call_modal.active {
+  display: flex;
+}
 
-@media screen and (min-width: $desktop) {}
+@media screen and (min-width: $tablet) {
+  .call_modal {
+    right: 5rem;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .call_modal {
+    right: 6.5rem;
+  }
+}

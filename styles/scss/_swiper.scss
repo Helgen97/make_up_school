@@ -1,0 +1,37 @@
+:root {
+  --swiper-theme-color: #{$color-rose};
+  --swiper-navigation-sides-offset: -2.5rem;
+  --swiper-navigation-color: #{$color-rose};
+  --swiper-pagination-color: #{$color-rose};
+  --swiper-pagination-bullet-size: 0.75rem;
+  --swiper-pagination-bullet-width: 0.75rem;
+  --swiper-pagination-bullet-height: 0.75rem;
+  --swiper-pagination-bottom: -2.5rem;
+  --swiper-pagination-bullet-inactive-color: #{$color-mimi_pink};
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+}
+
+
+.swiper-button-prev::after {
+  content: url("../images/arrow-right.svg");
+}
+
+.swiper-button-next::after {
+  content: url("../images/arrow-left.svg");
+}
+
+@media screen and (min-width: $tablet) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: block;
+    }
+  }

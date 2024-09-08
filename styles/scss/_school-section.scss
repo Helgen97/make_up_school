@@ -3,23 +3,13 @@
     flex-direction: column;
 }
 
-.school_description-block {
-  padding-top: 1rem;
-  text-align: center;
-}
-
 .school_title {
   padding-bottom: 1.5rem;
 }
 
-.school_description {
-  font-family: $font-regular;
-  font-weight: 400;
-
-  &:not(:last-child) {
+.school_description:not(:last-child) {
     margin-bottom: 1rem;
   }
-}
 
 .school_image-block {
   position: relative;
