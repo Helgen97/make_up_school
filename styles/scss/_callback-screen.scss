@@ -1,0 +1,39 @@
+.callback_screen {
+  padding: 1.5rem 0.5rem;
+  background: url("../images/callback-screen-bg.png") no-repeat,
+    $color-mimi_pink;
+  background-size: cover;
+  border: 2px solid $color_rose;
+}
+
+.callback-screen_text {
+  margin-block: 1rem 1.5rem;
+}
+
+.callback-screen_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: $tablet) {
+  .callback_screen {
+    grid-area: 1 / 2 / 2 / 12;
+  }
+
+  .callback_screen-main {
+    display: flex;
+    margin-top: 1.5rem;
+    padding-inline: 1rem;
+    gap: 2rem;
+
+    & div {
+      flex: 1;
+    }
+  }
+
+  .callback-screen_form .default-btn {
+    width: fit-content;
+  }
+}

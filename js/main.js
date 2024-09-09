@@ -12,10 +12,23 @@ $(".mobile_menu-modal_close-btn").on("click", () => {
 
 $(".call_btn").on("click", () => {
     $(".call_modal").toggleClass("active");
-})
+});
+
+[...$(".course_block .default-btn")].forEach((element) => {
+    $(element).on('click', () => {
+        $(".course-modal").toggleClass("active")
+    })
+});
 
 $(document).mouseup(function (e) {
     var container = $(".mobile_menu-modal");
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        container.removeClass("active");
+    }
+});
+
+$(document).mouseup(function (e) {
+    var container = $(".course-modal");
     if (!container.is(e.target) && container.has(e.target).length === 0) {
         container.removeClass("active");
     }

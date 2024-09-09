@@ -104,13 +104,14 @@ h2 {
 }
 
 h3 {
-  font-family: $font-headers; 
+  font-family: $font-headers;
   font-weight: 700;
   font-size: 1.1825rem;
 }
 
 input {
-  padding: .5rem 0 .5rem 1.5rem;
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 1rem;
   color: $color-gray;
   background-color: $color-fairy_tale;
   border: 0;
@@ -140,7 +141,6 @@ section {
   }
 }
 
-
 .grid-area {
   grid-area: 1 / 1 / 2 / 4;
 }
@@ -150,7 +150,7 @@ section {
     grid-template-columns: repeat(12, 1fr);
     padding-inline: 5rem;
   }
-  
+
   .grid-area {
     grid-area: 1 / 1 / 2 / 13;
   }
@@ -166,4 +166,5 @@ section {
   }
 }
 
-@import "swiper", "up_and_call-buttons", "call-modal", "header", "main", "school-section", "courses";
+@import "swiper", "up_and_call-buttons", "call-modal", "header", "main",
+  "school-section", "courses", "course-modal", "callback-screen", "contacts", "footer";

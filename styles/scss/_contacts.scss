@@ -1,0 +1,47 @@
+.contact-info {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 1.5rem 1rem;
+  margin-inline: auto;
+}
+
+.contact-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: $tablet) {
+  .contact-info {
+    align-items: start;
+  }
+
+  .contact-item {
+    display: grid;
+    grid-template-columns: 2rem auto;
+    align-content: start;
+  }
+
+  .contact-link {
+    width: 21ch;
+    white-space: nowrap;
+  }
+
+  .right-text {
+    padding-left: 11rem;
+  }
+
+  .left-text {
+    grid-template-columns: auto 2rem;
+    align-content: end;
+    padding-right: 11rem;
+  }
+
+  .left-text svg {
+    order: 2;
+  }
+}
