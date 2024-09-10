@@ -34,7 +34,7 @@ $(document).mouseup(function (e) {
     }
 });
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.s-one', {
     direction: 'horizontal',
     loop: true,
     autoplay: {
@@ -49,7 +49,7 @@ const swiper = new Swiper('.swiper', {
             slidesPerView: 2,
             spaceBetween: 32,
         },
-        1439: {
+        1279: {
             slidesPerView: 3,
             spaceBetween: 32,
         }
@@ -60,5 +60,23 @@ const swiper = new Swiper('.swiper', {
     },
     pagination: {
         el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
+const swiperTwo = new Swiper('.s-two', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+        delay: 10000
+    },
+    slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
     },
 });

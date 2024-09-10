@@ -10,7 +10,7 @@ html {
 a,
 a:link,
 a:visited {
-  transition: color 0.15s linear;
+  transition: color 0.25s linear;
   text-decoration: none;
   color: inherit;
 }
@@ -55,7 +55,7 @@ button {
       top: 0;
       left: 0;
       height: 100%;
-      // animation: 0.6s linear backgroundFillOut forwards;
+      // animation: 0.6s ease-in-out backgroundFillOut forwards;
       z-index: -1;
     }
 
@@ -63,10 +63,14 @@ button {
       color: $color-white;
 
       &::before {
-        animation: 0.6s linear backgroundFillIn forwards;
+        animation: 0.6s ease-in-out backgroundFillIn forwards;
       }
     }
   }
+}
+
+img {
+  object-fit: cover;
 }
 
 @keyframes backgroundFillIn {
@@ -167,4 +171,5 @@ section {
 }
 
 @import "swiper", "up_and_call-buttons", "call-modal", "header", "main",
-  "school-section", "courses", "course-modal", "callback-screen", "contacts", "footer";
+  "school-section", "courses", "course-modal", "callback-screen",
+  "teachers-screen", "portfolio", "contacts", "footer";
