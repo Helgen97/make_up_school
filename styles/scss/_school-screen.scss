@@ -1,6 +1,6 @@
 .school {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .school_title {
@@ -8,8 +8,8 @@
 }
 
 .school_description:not(:last-child) {
-    margin-bottom: 1rem;
-  }
+  margin-bottom: 1rem;
+}
 
 .school_image-block {
   position: relative;
@@ -34,15 +34,13 @@
 }
 
 @media screen and (min-width: $tablet) {
-
-    .school {
-        display: grid;
-    }
+  .school {
+    display: grid;
+  }
 
   .school_description-block {
     grid-area: 1 / 2 / 2 / 8;
   }
-
 
   .school_image-block {
     grid-area: 1 / 8 / 2 / 13;
@@ -53,7 +51,7 @@
     &::before {
       width: calc(100% + 6.5rem);
       height: 356px;
-      top: -.5rem;
+      top: -0.5rem;
       left: -1.5rem;
     }
   }
@@ -64,15 +62,14 @@
 }
 
 @media screen and (min-width: $desktop) {
-
-    .school_image-block::before {
-        width: calc(100% + 12.5rem + 1.5rem);
-        height: 284px;
-        top: -.5rem;
-        left: -1.5rem;
-    }
-  
-    .school_image {
-      height: 268px;
-    }
+  .school_image-block::before {
+    width: calc(100% + 12.5rem + 1.5rem);
+    height: 284px;
+    top: -0.5rem;
+    left: -1.5rem;
   }
+
+  .school_image {
+    height: 268px;
+  }
+}

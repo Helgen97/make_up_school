@@ -22,7 +22,15 @@
   align-items: center;
 }
 
-.swiper-pagination {
+.swiper-pagination_two {
+  position: absolute;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+.swiper-pagination,
+.swiper-pagination_two {
   z-index: 3;
 }
 
@@ -31,7 +39,6 @@
   display: none;
   z-index: 1;
 }
-
 
 .swiper-button-prev::after {
   content: url("../images/arrow-right.svg");
@@ -42,8 +49,8 @@
 }
 
 @media screen and (min-width: $tablet) {
-    .swiper-button-prev,
-    .swiper-button-next {
-      display: block;
-    }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: block;
   }
+}

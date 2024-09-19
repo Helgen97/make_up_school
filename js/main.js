@@ -2,8 +2,8 @@ $(".up_btn").on('click', () => {
     $(document).scrollTop(0);
 })
 
-$(".mobile_menu-button").on("click", () => {
-    $(".mobile_menu-modal").addClass("active");
+$("#mobile-menu_button").on("click", () => {
+    $(".mobile-menu_modal").addClass("active");
 })
 
 $(".mobile_menu-modal_close-btn").on("click", () => {
@@ -21,7 +21,7 @@ $(".call_btn").on("click", () => {
 });
 
 $(document).mouseup(function (e) {
-    var container = $(".mobile_menu-modal");
+    var container = $(".mobile-menu_modal");
     if (!container.is(e.target) && container.has(e.target).length === 0) {
         container.removeClass("active");
     }
@@ -76,7 +76,7 @@ const swiperTwo = new Swiper('.s-two', {
         prevEl: '.swiper-button-prev',
     },
     pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination_two',
         clickable: true,
     },
 });

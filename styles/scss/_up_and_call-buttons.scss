@@ -1,11 +1,10 @@
 .up_btn-box,
-.call_btn-container,
-.call_btn-box {
+.callMe-box {
   position: relative;
 }
 
 .up_btn,
-.call_btn {
+.callMe_btn {
   position: fixed;
   bottom: 1.25rem;
   padding: 0.5rem;
@@ -21,7 +20,7 @@
   animation: 1.25s linear buttonRotate infinite alternate;
 }
 
-.call_btn {
+.callMe_btn {
   width: 3.5rem;
   height: 3.5rem;
   right: 1.25rem;
@@ -51,18 +50,18 @@
 
 @media screen and (min-width: $tablet) {
   .up_btn {
-      left: 1.5rem;
+    left: 1.5rem;
   }
-  .call_btn {
+  .callMe_btn {
     right: 1.5rem;
   }
 }
 
 @media screen and (min-width: $desktop) {
   .up_btn {
-      left: 3rem;
+    left: 3rem;
   }
-  .call_btn {
+  .callMe_btn {
     right: 3rem;
   }
 }

@@ -1,4 +1,4 @@
-@import "vars";
+@import "vars", "mixins";
 
 html {
   font-family: $font-regular;
@@ -130,7 +130,8 @@ input {
   }
 }
 
-section {
+section,
+main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
@@ -150,7 +151,8 @@ section {
 }
 
 @media screen and (min-width: $tablet) {
-  section {
+  section,
+  main {
     grid-template-columns: repeat(12, 1fr);
     padding-inline: 5rem;
   }
@@ -161,7 +163,8 @@ section {
 }
 
 @media screen and (min-width: $desktop) {
-  section {
+  section,
+  main {
     padding-inline: 12.5rem;
   }
 
@@ -170,6 +173,6 @@ section {
   }
 }
 
-@import "swiper", "up_and_call-buttons", "call-modal", "header", "main",
-  "school-section", "courses", "course-modal", "callback-screen",
+@import "swiper", "up_and_call-buttons", "call-modal", "header", "main-screen",
+  "school-screen", "courses", "course-modal", "callback-screen",
   "teachers-screen", "portfolio", "contacts", "footer";

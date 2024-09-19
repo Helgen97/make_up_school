@@ -1,18 +1,15 @@
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center, 2.5rem);
   padding: 0.5rem;
-  gap: 2.5rem;
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-weight: 600;
 }
 
-.mobile_menu-box {
+.mobile-menu {
   display: block;
 }
 
-.mobile_menu-modal {
+.mobile-menu_modal {
   display: none;
   position: absolute;
   top: 1.5rem;
@@ -46,7 +43,6 @@ header {
 .lang-box {
   display: flex;
   gap: 0.75rem;
-  font-family: $font-regular;
 }
 
 .lang-button {
@@ -70,6 +66,7 @@ header {
     flex-direction: column;
     gap: 0.5rem;
   }
+  
   .mobile_nav-menu {
     display: flex;
     gap: 1.5rem;
@@ -82,7 +79,7 @@ header {
     gap: 1.5rem;
   }
 
-  .mobile_menu-box {
+  .mobile-menu {
     display: none;
   }
 
