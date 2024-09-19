@@ -1,0 +1,21 @@
+.error_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    border-top: 2px solid $color-gray;
+    border-bottom: 2px solid $color-gray;
+    font-weight: 700;
+}
+
+.error_code {
+    font-size: 5rem;
+    line-height: 1;
+}
+
+.error_text {
+    font-size: 1.5rem;
+}

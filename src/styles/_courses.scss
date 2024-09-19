@@ -1,0 +1,36 @@
+.courses_screen {
+    position: relative;
+}
+
+.courses_box {
+    margin-block: 1.5rem 3rem;
+    position: relative;
+}
+
+.course_block {
+    width: fit-content;
+    padding: 1.5rem;
+    background-color: $color-mimi_pink;
+    border: 2px solid $color-rose;
+}
+
+.course_img {
+    height: 334px;
+}
+
+.course_title {
+    margin-block: 1rem;
+}
+
+.courses_details {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+    text-align: start;
+}
+
+.course_detail-text {
+    line-height: .75rem;
+    font-weight: 700;
+}

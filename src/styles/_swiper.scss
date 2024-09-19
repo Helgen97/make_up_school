@@ -1,0 +1,57 @@
+:root {
+  --swiper-theme-color: #{$color-rose};
+  --swiper-navigation-sides-offset: -2.5rem;
+  --swiper-navigation-color: #{$color-rose};
+  --swiper-pagination-color: #{$color-rose};
+  --swiper-pagination-bullet-size: 0.75rem;
+  --swiper-pagination-bullet-width: 0.75rem;
+  --swiper-pagination-bullet-height: 0.75rem;
+  --swiper-pagination-bottom: -2.5rem;
+  --swiper-pagination-bullet-inactive-color: #{$color-mimi_pink};
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+.swiper {
+  position: static;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination_two {
+  position: absolute;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+.swiper-pagination,
+.swiper-pagination_two {
+  z-index: 3;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+  z-index: 1;
+}
+
+.swiper-button-prev::after {
+  content: url("../images/arrow-right.svg");
+}
+
+.swiper-button-next::after {
+  content: url("../images/arrow-left.svg");
+}
+
+@media screen and (min-width: $tablet) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: block;
+  }
+}

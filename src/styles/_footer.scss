@@ -1,0 +1,21 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding-block: 1rem;
+}
+
+.creator-link {
+    font-weight: 600;
+    text-decoration: underline !important;
+}
+
+@media screen and (min-width: $tablet) {
+    footer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+    }
+}

@@ -1,0 +1,44 @@
+.callMe-modal {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 280px;
+  height: 337px;
+  bottom: calc(3.5rem + 1.5rem);
+  right: 1.25rem;
+  padding: 1.5rem 1rem;
+  background-color: $color-mimi_pink;
+  border: 2px solid $color-rose;
+  text-align: center;
+  box-shadow: $modal-shadow;
+  z-index: 2;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .default-btn {
+    width: fit-content;
+  }
+}
+
+.callMe-modal.active {
+  display: flex;
+}
+
+@media screen and (min-width: $tablet) {
+  .callMe-modal {
+    right: 5rem;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .callMe-modal {
+    right: 6.5rem;
+  }
+}

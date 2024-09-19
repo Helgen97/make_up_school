@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
+@font-face {
+  font-family: "Source Serif Pro";
+  font-weight: 400;
+  src: url("../../fonts/SourceSerifPro-Regular.otf") format("otf"),
+    url("../../fonts//SourceSerifPro-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Source Serif Pro";
+  font-weight: 600;
+  src: url("../../fonts/SourceSerifPro-Semibold.otf") format("otf"),
+    url("../../fonts//SourceSerifPro-Semibold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Source Serif Pro";
+  font-weight: 700;
+  src: url("../../fonts/SourceSerifPro-Bold.otf") format("otf"),
+    url("../../fonts//SourceSerifPro-Bold.ttf") format("ttf");
+}
+
+$tablet: 743px;
+$desktop: 1279px;
+
+$color-rose: #ef2f7c;
+$color-fairy_tale: #f5c3d5;
+$color-mimi-pink: #fce3ec;
+$color-gray: #5e5e5e;
+$color-creamy: #fef5ea;
+$color-white: #ffffff;
+$color-error: #ff3333;
+$color-success: #28a745;
+
+$font-headers: "Roboto Slab", serif;
+$font-regular: "Source Serif Pro";
+
+$modal-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;

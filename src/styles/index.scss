@@ -1,0 +1,180 @@
+@import "vars", "mixins";
+
+html {
+  font-family: $font-regular;
+  font-size: 16px;
+  background-color: $color-creamy;
+  color: $color-gray;
+}
+
+a,
+a:link,
+a:visited {
+  transition: color 0.25s linear;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $color-rose;
+}
+
+ul,
+ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background-color: inherit;
+  transition: color 0.15s linear;
+  cursor: pointer;
+
+  svg {
+    display: block;
+  }
+}
+
+a.default-btn,
+button.default-btn {
+  position: relative;
+  padding: 1.125rem 3rem;
+  border: 2px solid $color-rose;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 0.6s linear;
+  z-index: 0;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    // animation: 0.6s ease-in-out backgroundFillOut forwards;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $color-white;
+
+    &::before {
+      animation: 0.6s ease-in-out backgroundFillIn forwards;
+    }
+  }
+}
+
+img {
+  object-fit: cover;
+}
+
+@keyframes backgroundFillIn {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+    background-color: $color-rose;
+  }
+}
+
+@keyframes backgroundFillOut {
+  from {
+    width: 100%;
+    background-color: $color-rose;
+  }
+
+  to {
+    width: 0%;
+  }
+}
+
+h1 {
+  font-family: $font-headers;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: $font-headers;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-family: $font-headers;
+  font-weight: 700;
+  font-size: 1.1825rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 1rem;
+  color: $color-gray;
+  background-color: $color-fairy_tale;
+  border: 0;
+  border-top: 2px solid $color-white;
+  font-size: 16px;
+
+  &:focus,
+  &:active {
+    border: 0;
+    border-top: 2px solid $color-white;
+    outline: none;
+  }
+}
+
+section,
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 32px;
+  grid-row-gap: 0px;
+  padding-inline: clamp(1.25rem, 2.4dvw, 5rem);
+
+  &:not(.main) {
+    padding-block: 1rem;
+    text-align: center;
+    border-bottom: 2px solid $color-gray;
+  }
+}
+
+.grid-area {
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+@media screen and (min-width: $tablet) {
+  section,
+  main {
+    grid-template-columns: repeat(12, 1fr);
+    padding-inline: 5rem;
+  }
+
+  .grid-area {
+    grid-area: 1 / 1 / 2 / 13;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  section,
+  main {
+    padding-inline: 12.5rem;
+  }
+
+  .grid-area {
+    grid-area: 1 / 1 / 2 / 13;
+  }
+}
+
+@import "swiper", "up_and_call-buttons", "call-modal", "header", "main-screen",
+  "school-screen", "courses", "course-modal", "callback-screen",
+  "teachers-screen", "portfolio", "contacts", "footer", "loader", "error-page";

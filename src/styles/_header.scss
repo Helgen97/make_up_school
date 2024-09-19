@@ -1,0 +1,95 @@
+header {
+  @include flex(center, center, 2.5rem);
+  padding: 0.5rem;
+  font-size: 1.1875rem;
+  font-weight: 600;
+}
+
+.mobile-menu {
+  display: block;
+}
+
+.mobile-menu_modal {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  width: calc(100dvw);
+  padding-block: 0.5rem;
+  background: url(../images/mobile-menu-bg.png) no-repeat, $color-mimi-pink;
+  background-size: cover;
+  border: 2px $color-rose solid;
+  box-shadow: $modal-shadow;
+
+  &.active {
+    display: block;
+  }
+}
+
+.mobile_menu-modal_btn-box {
+  padding-left: 1.5rem;
+}
+
+.mobile_nav {
+  padding-top: 0.5rem;
+  text-align: center;
+  border-top: 2px solid $color-gray;
+}
+
+.nav-bar {
+  display: none;
+}
+
+.lang-box {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.lang-button {
+  &.lang_active {
+    color: $color-rose;
+    cursor: default;
+  }
+
+  &:hover {
+    color: $color-rose;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  header {
+    gap: 7.5rem;
+  }
+
+  .mobile_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .mobile_nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  header {
+    gap: 1.5rem;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .nav-bar {
+    display: block;
+  }
+
+  .nav-menu {
+    display: flex;
+    font-family: $font-headers;
+    gap: 1.5rem;
+  }
+}
