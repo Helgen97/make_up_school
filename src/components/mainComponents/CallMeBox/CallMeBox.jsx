@@ -17,8 +17,12 @@ const CallMeBox = () => {
   return (
     <ClickAwayListener onClickAway={hideModal}>
       <div className="callMe-box">
-        <CallMeBoxButton showModalFunction={showModal} />
-        <CallMeBoxModal isCallMeBoxActive={isCallMeBoxActive}/>
+        <CallMeBoxButton
+          isModalActive={isCallMeBoxActive}
+          showModalFunction={showModal}
+          hideModalFunction={hideModal}
+        />
+        <CallMeBoxModal isCallMeBoxActive={isCallMeBoxActive} />
       </div>
     </ClickAwayListener>
   );
