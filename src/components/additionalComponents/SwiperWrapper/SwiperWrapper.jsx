@@ -7,11 +7,13 @@ const SwiperWrapper = ({ children, slidesPerView, breakpoints }) => {
       modules={[Navigation, Pagination]}
       direction="horizontal"
       loop
+      speed={1000}
       autoplay={{ delay: 1000 }}
       navigation
       pagination
       breakpoints={breakpoints}
       slidesPerView={slidesPerView}
+      
     >
       {children}
     </Swiper>
