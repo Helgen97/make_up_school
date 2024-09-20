@@ -1,9 +1,11 @@
-import NavigationBarList from "../NavigationBarList";
+import NavigationList from "../NavigationList";
 
 const NavigationBar = ({ navListItems }) => {
   return (
     <div className="nav-bar">
-      <NavigationBarList navListItems={navListItems} />
+      <ul className="nav-menu">
+        <NavigationList navListItems={navListItems} />
+      </ul>
     </div>
   );
 };

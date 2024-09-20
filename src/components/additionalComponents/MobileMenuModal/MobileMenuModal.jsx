@@ -5,7 +5,7 @@ const MobileMenuModal = ({ isModalActive, closeModalFunction }) => {
   return (
     <div className={isModalActive ? "mobile-menu_modal active" : "mobile-menu_modal" }>
       <MobileMenuModalCloseButton closeModalFunction={closeModalFunction} />
-      <MobileMenuModalNav />
+      <MobileMenuModalNav onClickEvent={closeModalFunction}/>
     </div>
   );
 };

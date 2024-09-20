@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PortfolioScreenAlbumItem = ({ hrefLink, imageUrl }) => {
   return (
     <div className="album-item">
-      <a href={hrefLink}>
+      <Link to={hrefLink} onClick={window.scrollTo(0, -1)}>
         <img src={imageUrl} alt="one of our portfolio work" loading="lazy" />
-      </a>
+      </Link>
     </div>
   );
 };

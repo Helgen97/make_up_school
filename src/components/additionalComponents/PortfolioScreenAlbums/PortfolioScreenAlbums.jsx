@@ -1,21 +1,10 @@
 import { useIntl } from "react-intl";
 import PortfolioScreenAlbumItem from "../PortfolioScreenAlbumItem/PortfolioScreenAlbumItem";
+import { Link } from "react-router-dom";
+import { MAIN_SCREEN_IMAGES } from "../../../constants/content";
 
 const PortfolioScreenAlbums = () => {
   const { formatMessage } = useIntl();
-
-  const MAIN_SCREEN_IMAGES = {
-    hrefLink: "/albums",
-    images: [
-      "./images/album1.jpg",
-      "./images/album2.jpg",
-      "./images/album3.jpg",
-      "./images/album4.jpg",
-      "./images/album5.jpg",
-      "./images/album6.jpg",
-      "./images/album7.jpg",
-    ],
-  };
 
   return (
     <div className="albums">
@@ -31,9 +20,9 @@ const PortfolioScreenAlbums = () => {
       <div className="album-item albums-description">
         <p>{formatMessage({ id: "portfolio_first_text" })}</p>
         <p>{formatMessage({ id: "portfolio_second_text" })}</p>
-        <a href="/albums" className="default-btn">
+        <Link to="/albums" className="default-btn">
           {formatMessage({ id: "explore" })}
-        </a>
+        </Link>
       </div>
     </div>
   );

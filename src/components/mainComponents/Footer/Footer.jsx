@@ -1,5 +1,5 @@
-import FooterLogoSvg from "../../svgComponents/FooterLogoSvg"
-
+import { Link } from "react-router-dom";
+import FooterLogoSvg from "../../svgComponents/FooterLogoSvg";
 
 const Footer = () => {
   return (
@@ -8,14 +8,18 @@ const Footer = () => {
         <p>{"©" + new Date().getFullYear()} Olena Bulakh Make Up School</p>
       </div>
       <div>
-        <a href="/">
+        <Link to="/">
           <FooterLogoSvg />
-        </a>
+        </Link>
       </div>
       <div>
         <p>
           Powered by{" "}
-          <a href="https://www.dmytro-donchenko.pp.ua" className="creator-link">
+          <a
+            href="https://www.dmytro-donchenko.pp.ua"
+            target="_blank"
+            className="creator-link"
+          >
             Helgen
           </a>
         </p>

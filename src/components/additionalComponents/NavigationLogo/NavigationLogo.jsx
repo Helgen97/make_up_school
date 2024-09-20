@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import NavigationLogoSvg from "../../svgComponents/NavigationLogoSvg";
 
 const NavigationLogo = () => {
   return (
     <div className="nav-logo">
-      <a href="/">
+      <Link to="/">
         <NavigationLogoSvg />
-      </a>
+      </Link>
     </div>
   );
 };

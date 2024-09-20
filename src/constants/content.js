@@ -44,6 +44,19 @@ export const BREAKPOINTS = {
     },
 };
 
+export const MAIN_SCREEN_IMAGES = {
+    hrefLink: "/albums",
+    images: [
+        "./images/album1.jpg",
+        "./images/album2.jpg",
+        "./images/album3.jpg",
+        "./images/album4.jpg",
+        "./images/album5.jpg",
+        "./images/album6.jpg",
+        "./images/album7.jpg",
+    ],
+};
+
 
 export const PAGE_CONTENT = {
     mainSectionDescription: {

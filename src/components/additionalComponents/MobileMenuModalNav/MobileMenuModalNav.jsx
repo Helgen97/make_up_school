@@ -1,11 +1,19 @@
-import MobileMenuModalNavList from "../MobileMenuModalNavList";
+import NavigationList from "../NavigationList";
 import { MENUITEMS } from "../../../constants/content";
 
-const MobileMenuModalNav = () => {
+const MobileMenuModalNav = ({ onClickEvent }) => {
   return (
     <div className="mobile_nav">
-      <MobileMenuModalNavList navListItems={MENUITEMS.leftMenu} />
-      <MobileMenuModalNavList navListItems={MENUITEMS.rightMenu} />
+      <ul className="mobile_nav-menu">
+        <NavigationList
+          navListItems={MENUITEMS.leftMenu}
+          onClickEvent={onClickEvent}
+        />
+        <NavigationList
+          navListItems={MENUITEMS.rightMenu}
+          onClickEvent={onClickEvent}
+        />
+      </ul>
     </div>
   );
 };

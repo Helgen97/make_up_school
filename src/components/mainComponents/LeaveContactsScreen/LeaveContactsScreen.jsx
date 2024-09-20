@@ -5,7 +5,7 @@ const LeaveContactsScreen = () => {
   const { formatMessage } = useIntl();
 
   return (
-    <section className="callback">
+    <section id="teachers" className="callback">
       <div className="callback_screen grid-area">
         <h2>{formatMessage({ id: "leave_contacts_screen_title" })}</h2>
         <LeaveContactsScreenMainBlock />

@@ -1,4 +1,5 @@
 import { useIntl } from "react-intl";
+import CourseModalCloseButtonBox from "../CourseModalCloseButtonBox";
 import CourseModalImageBlock from "../CourseModalImageBlock";
 import CourseModalDetails from "../CourseModalDetails";
 import CourseModalProgramBlock from "../CourseModalProgramBlock";
@@ -8,6 +9,7 @@ const CourseModal = ({ chosenCourse, isModalActive, closeModalFunction }) => {
   const { formatMessage, locale } = useIntl();
   return (
     <div className={isModalActive ? "course-modal active" : "course-modal"}>
+      <CourseModalCloseButtonBox onClickEvent={closeModalFunction} />
       <CourseModalImageBlock imageUrl={chosenCourse.imageUrl} />
       <h3 className="course-modal_title">{chosenCourse[locale].title}</h3>
       <CourseModalDetails
