@@ -1,5 +1,4 @@
-
-import { Provider } from "react-redux"
+import { Provider } from "react-redux";
 import mainStore from "../mainStore";
 
 const StoreProvider = ({ children }) => {

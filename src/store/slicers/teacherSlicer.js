@@ -1,12 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { API_URL, API_LINKS } from "../../constants/content";
+import axios from 'axios';
 
-import { PAGE_CONTENT } from "../../constants/content";
 
-
-export const fetchTeachers = createAsyncThunk("teacherSlicer/fetchTeachers",
-    async () => {
-        return PAGE_CONTENT.teachers;
-    });
+export const fetchTeachers = createAsyncThunk("teacherSlicer/fetchTeachers", async () => {
+    try {
+        const response = await axios.get(`${API_URL}/${API_LINKS.teachers}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+});
 
 export const teacherSlicer = createSlice({
     name: 'teacherSlicer',

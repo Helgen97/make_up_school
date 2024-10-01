@@ -1,11 +1,13 @@
 import SwiperWrapper from "../SwiperWrapper";
-import { BREAKPOINTS } from "../../../constants/content";
 import SwiperSliderCourseWrapper from "../SwiperSliderCourseWrapper";
 import CourseModal from "../CourseModal/CourseModal";
 import { useEffect, useState } from "react";
 import { ClickAwayListener } from "@mui/base";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCourses, chooseCourse } from "../../../store/slicers/coursesSlicer";
+import {
+  fetchCourses,
+  chooseCourse,
+} from "../../../store/slicers/coursesSlicer";
 import Loader from "../Loader";
 
 const CoursesBox = () => {
@@ -21,7 +23,7 @@ const CoursesBox = () => {
 
   const chooseCourseByClick = (id) => {
     dispatch(chooseCourse(id));
-  }
+  };
 
   const closeModal = () => {
     setModalActive(false);
@@ -29,6 +31,21 @@ const CoursesBox = () => {
 
   const showModal = () => {
     setModalActive(true);
+  };
+
+  const BREAKPOINTS = {
+    319: {
+      slidesPerView: 1,
+      centeredSlides: true,
+    },
+    743: {
+      slidesPerView: loadedCourses.length < 2 ? loadedCourses.length : 3,
+      spaceBetween: 32,
+    },
+    1279: {
+      slidesPerView: loadedCourses.length < 2 ? loadedCourses.length : 3,
+      spaceBetween: 32,
+    },
   };
 
   return (

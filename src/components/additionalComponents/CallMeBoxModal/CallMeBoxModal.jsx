@@ -1,6 +1,6 @@
 import { useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSendContacts } from "../../../store/slicers/contactsSlicer";
+import { postSendContacts } from "../../../store/slicers/contactsSlicer";
 import CallMeBoxModalForm from "../CallMeBoxModalForm";
 import CallMeErrorBlock from "../CallMeErrorBlock";
 import CallMeSuccessBlock from "../CallMeSuccessBlock";
@@ -14,8 +14,8 @@ const CallMeBoxModal = ({ isCallMeBoxActive }) => {
   const dispatch = useDispatch();
 
   const sendContacts = (contacts) => {
-    dispatch(fetchSendContacts(contacts));
-  };  
+    dispatch(postSendContacts(contacts));
+  };
 
   return (
     <div className={isCallMeBoxActive ? "callMe-modal active" : "callMe-modal"}>

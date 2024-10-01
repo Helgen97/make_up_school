@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSendContacts } from "../../../store/slicers/contactsSlicer";
+import { postSendContacts } from "../../../store/slicers/contactsSlicer";
 import LeaveContactsScreenMainText from "../LeaveContactsScreenMainText";
 import LeaveContactsScreenForm from "../LeaveContactsScreenForm/";
 import CallMeErrorBlock from "../CallMeErrorBlock";
@@ -13,7 +13,7 @@ const LeaveContactsScreenMainBlock = () => {
   const dispatch = useDispatch();
 
   const sendContacts = (contacts) => {
-    dispatch(fetchSendContacts(contacts));
+    dispatch(postSendContacts(contacts));
   };
 
   return (

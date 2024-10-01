@@ -13,7 +13,6 @@ const SwiperWrapper = ({ children, slidesPerView, breakpoints }) => {
       pagination
       breakpoints={breakpoints}
       slidesPerView={slidesPerView}
-      
     >
       {children}
     </Swiper>

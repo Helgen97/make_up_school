@@ -1,11 +1,15 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { API_URL, API_LINKS } from '../../constants/content';
 
 
-export const fetchSendContacts = createAsyncThunk("contactSlicer/fetchSendContacts",
-    async (contacts) => {
-         setTimeout(() => ({}), 3000);
-         return contacts;
-    });
+export const postSendContacts = createAsyncThunk("contactSlicer/postSendContacts", async (contacts) => {
+    try {
+        await axios.post(`${API_URL}/${API_LINKS.clients}`, contacts)
+    } catch (error) {
+        console.log(error);
+    }
+});
 
 export const contactSlicer = createSlice({
     name: 'contactSlicer',
@@ -17,19 +21,19 @@ export const contactSlicer = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(fetchSendContacts.pending, (state) => {
+            .addCase(postSendContacts.pending, (state) => {
                 return {
                     ...state,
                     isLoading: true
                 }
-            }).addCase(fetchSendContacts.fulfilled, (state) => {
+            }).addCase(postSendContacts.fulfilled, (state) => {
                 return {
                     ...state,
                     isLoading: false,
                     isError: false,
                     isSuccess: true,
                 }
-            }).addCase(fetchSendContacts.rejected, (state) => {
+            }).addCase(postSendContacts.rejected, (state) => {
                 return {
                     ...state,
                     isLoading: false,

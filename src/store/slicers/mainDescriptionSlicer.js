@@ -1,12 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { API_URL, API_LINKS } from "../../constants/content";
+import axios from 'axios';
 
-import { PAGE_CONTENT } from "../../constants/content";
 
-
-export const fetchMainDescription = createAsyncThunk("mainDescriptionSlicer/fetchMainDescription",
-    async () => {
-        return PAGE_CONTENT.mainSectionDescription;
-    });
+export const fetchMainDescription = createAsyncThunk("mainDescriptionSlicer/fetchMainDescription", async () => {
+    try {
+        const response = await axios.get(`${API_URL}/${API_LINKS.mainDescription}`)
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+});
 
 export const mainDescriptionSlicer = createSlice({
     name: 'mainDescriptionSlicer',

@@ -1,12 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { API_URL, API_LINKS } from "../../constants/content";
+import axios from 'axios';
 
-import { PAGE_CONTENT } from "../../constants/content";
 
-
-export const fetchAlbum = createAsyncThunk("albumSlicer/fetchAlbum",
-    async (id) => {
-        return PAGE_CONTENT.albums.find((album => +id === album.id));
-    });
+export const fetchAlbum = createAsyncThunk("albumSlicer/fetchAlbum", async (id) => {
+    try {
+        const response = await axios.get(`${API_URL}/${API_LINKS.albums}/${id}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+});
 
 export const albumSlicer = createSlice({
     name: 'albumSlicer',

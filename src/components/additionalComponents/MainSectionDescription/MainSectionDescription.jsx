@@ -1,5 +1,4 @@
 import { useIntl } from "react-intl";
-import { PAGE_CONTENT } from "../../../constants/content";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../Loader";
 import { useEffect } from "react";
