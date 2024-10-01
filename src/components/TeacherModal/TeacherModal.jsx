@@ -136,14 +136,14 @@ const TeacherModal = ({ open, onClose, edit = false }) => {
                 name="teacherFacts"
                 label="Найголовніші факти про викладача UA"
                 helperText="Введіть найголовніші факти про викладача на українській, кожен з нового рядка!"
-                value={teacher.en.teacherFacts.join("\n")}
+                value={teacher.ukr.teacherFacts.join("\n")}
                 onChange={onChangeUAHandler}
               />
               <TextFieldImpl
                 name="teacherFacts"
                 label="Найголовніші факти про викладача EN"
                 helperText="Введіть найголовніші факти про викладача на англійській, кожен з нового рядка!"
-                value={teacher.ukr.teacherFacts.join("\n")}
+                value={teacher.en.teacherFacts.join("\n")}
                 onChange={onChangeENHandler}
               />
               <TextFieldImpl

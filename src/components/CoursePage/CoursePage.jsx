@@ -58,9 +58,9 @@ const CoursePage = () => {
   return (
     <div>
       <H3 content="Список курсів" />
-      <Grid container size={12} spacing={3} className="my-3">
-        {isCoursesLoading && <CenteredLoader />}
-        {!isCoursesLoading && !isCoursesFetchError && (
+      {isCoursesLoading && <CenteredLoader />}
+      {!isCoursesLoading && !isCoursesFetchError && (
+        <Grid container size={12} spacing={3} className="my-3">
           <>
             <Grid size={4}>
               <CardWithAddButton onClick={addCourseButtonHandler} />
@@ -75,8 +75,8 @@ const CoursePage = () => {
               </Grid>
             ))}
           </>
-        )}
-      </Grid>
+        </Grid>
+      )}
       <CourseModal edit={isEdit} open={isOpen} onClose={closeModal} />
     </div>
   );

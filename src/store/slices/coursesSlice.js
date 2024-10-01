@@ -1,23 +1,41 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { PAGE_CONTENT } from '../../constants/content';
+import axios from 'axios';
+import { API_URL, API_LINKS } from '../../constants/content';
 
-export const fetchCourses = createAsyncThunk("coursesSlice/fetchCourses", () => {
-    return PAGE_CONTENT.courses;
+export const fetchCourses = createAsyncThunk("coursesSlice/fetchCourses", async () => {
+    try {
+        const response = await axios.get(`${API_URL}/${API_LINKS.courses}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-export const updateCourseById = createAsyncThunk("coursesSlice/updateCourseById", ({ courseId, updatedCourse }) => {
-    console.log(updatedCourse);
-    return updatedCourse;
+export const updateCourseById = createAsyncThunk("coursesSlice/updateCourseById", async ({ courseId, updatedCourse }) => {
+    try {
+        const response = await axios.put(`${API_URL}/${API_LINKS.courses}/${courseId}`, updatedCourse);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-export const createCourse = createAsyncThunk("coursesSlice/createCourse", (newCourse) => {
-    console.log(newCourse);
-    return newCourse;
+export const createCourse = createAsyncThunk("coursesSlice/createCourse", async (newCourse) => {
+    try {
+        const response = await axios.post(`${API_URL}/${API_LINKS.courses}`, newCourse);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-export const deleteCourseById = createAsyncThunk("coursesSlice/deleteCourseById", (id) => {
-    console.log(id);
-    return id;
+export const deleteCourseById = createAsyncThunk("coursesSlice/deleteCourseById", async (id) => {
+    try {
+        await axios.delete(`${API_URL}/${API_LINKS.courses}/${id}`);
+        return id;
+    } catch (error) {
+        console.log(error);
+    }
 })
 
 const emptyCourse = {

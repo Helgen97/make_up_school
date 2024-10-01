@@ -1,23 +1,41 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { PAGE_CONTENT } from '../../constants/content';
+import { API_URL, API_LINKS } from '../../constants/content';
+import axios from 'axios';
 
-export const fetchAlbums = createAsyncThunk("albumsSlice/fetchAlbums", () => {
-    return PAGE_CONTENT.albums;
+export const fetchAlbums = createAsyncThunk("albumsSlice/fetchAlbums", async () => {
+    try {
+        const response = await axios.get(`${API_URL}/${API_LINKS.albums}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-export const updateAlbumById = createAsyncThunk("albumsSlice/updateAlbumById", ({ albumId, updatedAlbum }) => {
-    console.log(updatedAlbum);
-    return updatedAlbum;
+export const updateAlbumById = createAsyncThunk("albumsSlice/updateAlbumById", async ({ albumId, updatedAlbum }) => {
+    try {
+        const response = await axios.put(`${API_URL}/${API_LINKS.albums}/${albumId}`, updatedAlbum);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-export const createAlbum = createAsyncThunk("albumsSlice/createAlbum", (newAlbum) => {
-    console.log(newAlbum);
-    return newAlbum;
+export const createAlbum = createAsyncThunk("albumsSlice/createAlbum", async (newAlbum) => {
+    try {
+        const response = await axios.post(`${API_URL}/${API_LINKS.albums}`, newAlbum);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-export const deleteAlbumById = createAsyncThunk("albumsSlice/deleteAlbumById", (id) => {
-    console.log(id);
-    return id;
+export const deleteAlbumById = createAsyncThunk("albumsSlice/deleteAlbumById", async (id) => {
+    try {
+        await axios.delete(`${API_URL}/${API_LINKS.albums}/${id}`);
+        return id;
+    } catch (error) {
+        console.log(error);
+    }
 })
 
 const emptyAlbum = {
