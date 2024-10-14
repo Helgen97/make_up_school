@@ -1,13 +1,12 @@
 import Grid from "../Grid";
 import LinkWrapper from "../LinkWrapper";
 import { SIDEBAR_LINKS } from "../../constants/content";
-import { driver } from "driver.js";
 
 const Sidebar = () => {
   return (
     <Grid
       id="sidebar"
-      size={3}
+      size={{ xs: 12, sm: 5, lg: 3 }}
       className={"d-flex flex-column gap-2 p-3 shadow-sm bg-light"}
     >
       {SIDEBAR_LINKS.map((link) => (

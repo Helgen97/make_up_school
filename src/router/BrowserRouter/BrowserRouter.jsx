@@ -26,9 +26,13 @@ const AlbumsPageProvider = lazy(() =>
   import("../../pageContainers/AlbumsPageProvider")
 );
 
-// const SettingsPageProvider = lazy(() =>
-//   import("../../pageContainers/SettingsPageProvider")
-// );
+const BotSettingsPageProvider = lazy(() =>
+  import("../../pageContainers/BotSettingsPageProvider")
+);
+
+const PasswordSettingsPageProvider = lazy(() =>
+  import("../../pageContainers/PasswordSettingsPageProvider")
+);
 
 const ErrorPageProvider = lazy(() =>
   import("../../pageContainers/ErrorPageProvider")
@@ -63,10 +67,14 @@ const ROUTES_LIST = [
         path: "albums",
         element: <AlbumsPageProvider />,
       },
-      // {
-      //   path: "settings",
-      //   element: <SettingsPageProvider />,
-      // },
+      {
+        path: "bot-settings",
+        element: <BotSettingsPageProvider />,
+      },
+      {
+        path: "password",
+        element: <PasswordSettingsPageProvider />,
+      },
       {
         path: "*",
         element: <ErrorPageProvider />,

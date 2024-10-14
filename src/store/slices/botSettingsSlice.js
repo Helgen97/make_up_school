@@ -2,9 +2,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { API_LINKS, API_URL } from '../../constants/content';
 import axios from 'axios';
 
-export const fetchMainDescription = createAsyncThunk("mainDescriptionSlice/fetchMainDescription", async () => {
+export const fetchBotSettings = createAsyncThunk("botSettingsSlice/fetchBotSettings", async () => {
     try {
-        const response = await axios.get(`${API_URL}/${API_LINKS.mainDescription}`);
+        const response = await axios.get(`${API_URL}/${API_LINKS.botSettings}`);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -12,9 +12,9 @@ export const fetchMainDescription = createAsyncThunk("mainDescriptionSlice/fetch
     }
 });
 
-export const updateMainDescription = createAsyncThunk("mainDescriptionSlice/updateMainDescription", async (content) => {
+export const updateBotSettings = createAsyncThunk("botSettingsSlice/updateBotSettings", async (content) => {
     try {
-        const response = await axios.put(`${API_URL}/${API_LINKS.mainDescription}`, content);
+        const response = await axios.put(`${API_URL}/${API_LINKS.botSettings}`, content);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -23,52 +23,55 @@ export const updateMainDescription = createAsyncThunk("mainDescriptionSlice/upda
 })
 
 
-export const mainDescriptionSlice = createSlice({
-    name: 'mainDescriptionSlice',
+export const botSettingsSlice = createSlice({
+    name: 'botSettingsSlice',
     initialState: {
-        mainContent: {
-            en: "",
-            ukr: ""
+        botSettings: {
+            id: 0,
+            botToken: "",
+            chatId: "",
         },
         isLoading: false,
         isError: false,
+        isSuccess: false,
+
     },
     reducers: {
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchMainDescription.pending, (state) => {
+        builder.addCase(fetchBotSettings.pending, (state) => {
             return {
                 ...state,
                 isLoading: true,
             }
-        }).addCase(fetchMainDescription.rejected, (state) => {
+        }).addCase(fetchBotSettings.rejected, (state) => {
             return {
                 ...state,
                 isLoading: false,
                 isError: true,
             }
-        }).addCase(fetchMainDescription.fulfilled, (state, action) => {
+        }).addCase(fetchBotSettings.fulfilled, (state, action) => {
             return {
                 ...state,
-                mainContent: action.payload,
+                botSettings: action.payload,
                 isLoading: false,
                 isError: false,
             }
-        }).addCase(updateMainDescription.pending, (state) => {
+        }).addCase(updateBotSettings.pending, (state) => {
             return {
                 ...state,
                 isLoading: true,
             }
-        }).addCase(updateMainDescription.rejected, (state) => {
+        }).addCase(updateBotSettings.rejected, (state) => {
             return {
                 ...state,
                 isLoading: false,
                 isError: true,
             }
-        }).addCase(updateMainDescription.fulfilled, (state, action) => {
+        }).addCase(updateBotSettings.fulfilled, (state, action) => {
             return {
                 ...state,
-                mainContent: action.payload,
+                botSettings: action.payload,
                 isLoading: false,
                 isError: false,
             }
@@ -76,4 +79,4 @@ export const mainDescriptionSlice = createSlice({
     }
 })
 
-export default mainDescriptionSlice.reducer
+export default botSettingsSlice.reducer

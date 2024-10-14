@@ -63,11 +63,11 @@ const TeachersPage = () => {
         {isTeachersLoading && <CenteredLoader />}
         {!isTeachersLoading && !isTeachersFetchError && (
           <>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
               <CardWithAddButton onClick={addTeacherButtonHandler} />
             </Grid>
             {teachers.map((teacher) => (
-              <Grid key={teacher.id} size={4}>
+              <Grid key={teacher.id} size={{ xs: 12, sm: 6, lg: 4 }}>
                 <CustomCard
                   cardTitle={teacher.ukr.teacherName}
                   editHandle={() => editTeacher(teacher.id)}

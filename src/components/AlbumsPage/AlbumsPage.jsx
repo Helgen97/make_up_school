@@ -61,12 +61,12 @@ const AlbumsPage = () => {
 
         {!isAlbumsFetchError && !isAlbumsLoading && (
           <>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
               <CardWithAddButton onClick={addAlbumButtonHandler} />
             </Grid>
 
             {albums.map((album) => (
-              <Grid key={album.id} size={4}>
+              <Grid key={album.id} size={{ xs: 12, sm: 6, lg: 4 }}>
                 <CustomCard
                   cardTitle={album.ukr.albumTitle}
                   editHandle={() => editAlbum(album.id)}

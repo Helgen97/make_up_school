@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <Grid
       size={12}
-      className="d-flex align-items-center justify-content-around p-3 shadow-sm gap-4 bg-light"
+      className="d-flex flex-column flex-md-row align-items-center justify-content-around p-3 shadow-sm gap-4 bg-light"
     >
       <Avatar userName="Olena" />
       <WelcomeContainer userName="Olena" />

@@ -30,8 +30,6 @@ export const schoolDescriptionsSlice = createSlice({
         },
         isLoading: false,
         isError: false,
-        isSuccess: false,
-
     },
     reducers: {
     },

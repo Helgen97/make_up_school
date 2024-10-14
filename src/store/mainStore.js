@@ -3,7 +3,9 @@ import mainReducer from "./slices/mainDescriptionSlice"
 import schoolReducer from "./slices/schoolDescriptionSlice"
 import coursesReducer from "./slices/coursesSlice";
 import teacherReducer from "./slices/teacherSlice";
-import albumReducer from "./slices/albumsSlice"
+import albumReducer from "./slices/albumsSlice";
+import botSettingsReducer from "./slices/botSettingsSlice";
+import passwordReducer from "./slices/passwordSlice";
 
 export default configureStore({
     reducer: {
@@ -12,5 +14,7 @@ export default configureStore({
         courses: coursesReducer,
         teachers: teacherReducer,
         albums: albumReducer,
+        botSettings: botSettingsReducer,
+        passwordSettings: passwordReducer,
     }
 })

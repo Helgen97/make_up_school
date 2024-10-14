@@ -36,11 +36,16 @@ export const SIDEBAR_LINKS = [
     linkText: "Альбоми",
     href: "/albums",
   },
-  // {
-  //   icon: SettingsIcon,
-  //   linkText: "Налаштування",
-  //   href: "/settings",
-  // },
+  {
+    icon: SettingsIcon,
+    linkText: "Налаштування бота",
+    href: "/bot-settings",
+  },
+  {
+    icon: SettingsIcon,
+    linkText: "Налаштування паролю",
+    href: "/password",
+  },
 ];
 
 export const API_LINKS = {
@@ -49,6 +54,8 @@ export const API_LINKS = {
   courses: "api/courses",
   teachers: "api/teachers",
   albums: "api/albums",
+  botSettings: "api/settings/1",
+  passwordApi: "/api/user/",
 }
 
 export const API_URL = import.meta.env.VITE_API_URL;
