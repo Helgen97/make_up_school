@@ -1,11 +1,15 @@
-import LinkWrapper from "../LinkWrapper";
 import LogoutIcon from "../Icons/LogoutIcon";
 
 const LogoutLink = () => {
   return (
-    <LinkWrapper href={"/logout"} linkText="Вихід">
+    <a
+      href="/logout"
+      linkText="Вихід"
+      className="btn btn-primary d-flex align-items-center justify-content-center"
+    >
       <LogoutIcon />
-    </LinkWrapper>
+      Вихід
+    </a>
   );
 };
 

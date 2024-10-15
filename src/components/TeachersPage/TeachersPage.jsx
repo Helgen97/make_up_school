@@ -59,25 +59,23 @@ const TeachersPage = () => {
   return (
     <div>
       <H3 content="Список викладачів" />
-      <Grid container size={12} spacing={3} className="my-3">
-        {isTeachersLoading && <CenteredLoader />}
-        {!isTeachersLoading && !isTeachersFetchError && (
-          <>
-            <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
-              <CardWithAddButton onClick={addTeacherButtonHandler} />
+      {isTeachersLoading && <CenteredLoader />}
+      {!isTeachersLoading && !isTeachersFetchError && (
+        <Grid container size={12} spacing={3} className="my-3">
+          <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
+            <CardWithAddButton onClick={addTeacherButtonHandler} />
+          </Grid>
+          {teachers.map((teacher) => (
+            <Grid key={teacher.id} size={{ xs: 12, sm: 6, lg: 4 }}>
+              <CustomCard
+                cardTitle={teacher.ukr.teacherName}
+                editHandle={() => editTeacher(teacher.id)}
+                deleteHandle={() => deleteTeacher(teacher.id)}
+              />
             </Grid>
-            {teachers.map((teacher) => (
-              <Grid key={teacher.id} size={{ xs: 12, sm: 6, lg: 4 }}>
-                <CustomCard
-                  cardTitle={teacher.ukr.teacherName}
-                  editHandle={() => editTeacher(teacher.id)}
-                  deleteHandle={() => deleteTeacher(teacher.id)}
-                />
-              </Grid>
-            ))}
-          </>
-        )}
-      </Grid>
+          ))}
+        </Grid>
+      )}
       <TeacherModal open={isOpen} edit={isEdit} onClose={closeModal} />
     </div>
   );

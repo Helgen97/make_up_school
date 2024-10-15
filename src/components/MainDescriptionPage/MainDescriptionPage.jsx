@@ -12,7 +12,7 @@ import CenteredLoader from "../CenteredLoader";
 const MainDescriptionPage = () => {
   const [descriptions, setDescriptions] = useState({ en: "", ukr: "" });
 
-  const { mainContent, isLoading, isError, isSuccess } = useSelector(
+  const { mainContent, isLoading, isError } = useSelector(
     (state) => state.main
   );
 
@@ -58,7 +58,7 @@ const MainDescriptionPage = () => {
           <TextFieldImpl
             name={"en"}
             value={descriptions.en}
-            label="Tекст на англійській"
+            label="Текст на англійській"
             helperText="Введіть опис на англійській"
             onChange={textInputChangeHandler}
           />

@@ -8,9 +8,7 @@ import CenteredLoader from "../CenteredLoader";
 import { updateUserPassword } from "../../store/slices/passwordSlice";
 
 const PasswordSettingsPage = () => {
-  const [{ rawPassword }, setRawPassword] = useState({
-    rawPassword: "",
-  });
+  const [rawPassword, setRawPassword] = useState("");
 
   const [passwordCheck, setPasswordCheck] = useState("");
 
@@ -20,11 +18,7 @@ const PasswordSettingsPage = () => {
 
   const updatePassword = () => {
     if (rawPassword === passwordCheck) {
-      dispatch(
-        updateUserPassword({
-          rawPassword: rawPassword,
-        })
-      );
+      dispatch(updateUserPassword(rawPassword));
     }
   };
 
@@ -42,11 +36,7 @@ const PasswordSettingsPage = () => {
           <>
             <TextFieldImpl
               value={rawPassword}
-              onChange={(event) =>
-                setRawPassword({
-                  rawPassword: event.target.value,
-                })
-              }
+              onChange={(event) => setRawPassword(event.target.value)}
               label="Зміна паролю"
               helperText="Введіть новий пароль для входу в панель"
             />

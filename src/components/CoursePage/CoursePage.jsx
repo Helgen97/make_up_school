@@ -61,20 +61,18 @@ const CoursePage = () => {
       {isCoursesLoading && <CenteredLoader />}
       {!isCoursesLoading && !isCoursesFetchError && (
         <Grid container size={12} spacing={3} className="my-3">
-          <>
-            <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
-              <CardWithAddButton onClick={addCourseButtonHandler} />
+          <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
+            <CardWithAddButton onClick={addCourseButtonHandler} />
+          </Grid>
+          {courses.map((course) => (
+            <Grid key={course.id} size={{ xs: 12, sm: 6, lg: 4 }}>
+              <CustomCard
+                cardTitle={course.ukr.title}
+                editHandle={() => editCourse(course.id)}
+                deleteHandle={() => deleteCourse(course.id)}
+              />
             </Grid>
-            {courses.map((course) => (
-              <Grid key={course.id} size={{ xs: 12, sm: 6, lg: 4 }}>
-                <CustomCard
-                  cardTitle={course.ukr.title}
-                  editHandle={() => editCourse(course.id)}
-                  deleteHandle={() => deleteCourse(course.id)}
-                />
-              </Grid>
-            ))}
-          </>
+          ))}
         </Grid>
       )}
       <CourseModal edit={isEdit} open={isOpen} onClose={closeModal} />

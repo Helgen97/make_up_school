@@ -55,7 +55,7 @@ export const API_LINKS = {
   teachers: "api/teachers",
   albums: "api/albums",
   botSettings: "api/settings/1",
-  passwordApi: "/api/user/",
+  passwordApi: "api/user",
 }
 
 export const API_URL = import.meta.env.VITE_API_URL;

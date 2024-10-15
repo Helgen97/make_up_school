@@ -56,11 +56,11 @@ const AlbumsPage = () => {
   return (
     <div>
       <H3 content="Список альбомів" />
-      <Grid container size={12} spacing={3} className="my-3">
-        {isAlbumsLoading && <CenteredLoader />}
+      {isAlbumsLoading && <CenteredLoader />}
 
-        {!isAlbumsFetchError && !isAlbumsLoading && (
-          <>
+      {!isAlbumsFetchError && !isAlbumsLoading && (
+        <>
+          <Grid container size={12} spacing={3} className="my-3">
             <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
               <CardWithAddButton onClick={addAlbumButtonHandler} />
             </Grid>
@@ -74,9 +74,9 @@ const AlbumsPage = () => {
                 />
               </Grid>
             ))}
-          </>
-        )}
-      </Grid>
+          </Grid>
+        </>
+      )}
       <AlbumModal open={isOpen} onClose={closeModal} edit={isEdit} />
     </div>
   );
