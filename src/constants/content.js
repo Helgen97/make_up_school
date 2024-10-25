@@ -56,6 +56,7 @@ export const API_LINKS = {
   albums: "api/albums",
   botSettings: "api/settings/1",
   passwordApi: "api/user",
+  auth: "api/auth/login"
 }
 
 export const API_URL = import.meta.env.VITE_API_URL;

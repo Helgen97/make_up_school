@@ -1,7 +1,12 @@
 import CoursePage from "../../components/CoursePage";
+import AuthProvider from "../../auth/AuthProvider";
 
 const CoursesPageProvider = () => {
-  return <CoursePage />;
+  return (
+    <AuthProvider>
+      <CoursePage />
+    </AuthProvider>
+  );
 };
 
 export default CoursesPageProvider;

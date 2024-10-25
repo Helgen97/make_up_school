@@ -34,6 +34,10 @@ const PasswordSettingsPageProvider = lazy(() =>
   import("../../pageContainers/PasswordSettingsPageProvider")
 );
 
+const LoginPageProvider = lazy(() =>
+  import("../../pageContainers/LoginPageProvider")
+);
+
 const ErrorPageProvider = lazy(() =>
   import("../../pageContainers/ErrorPageProvider")
 );
@@ -74,6 +78,10 @@ const ROUTES_LIST = [
       {
         path: "password",
         element: <PasswordSettingsPageProvider />,
+      },
+      {
+        path: "login",
+        element: <LoginPageProvider />,
       },
       {
         path: "*",

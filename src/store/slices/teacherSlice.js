@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { API_URL, API_LINKS } from '../../constants/content';
 import axios from 'axios';
+import { authHeader } from "./authSlice"
 
 export const fetchTeachers = createAsyncThunk("teachersSlice/fetchTeachers", async () => {
     try {
@@ -13,7 +14,7 @@ export const fetchTeachers = createAsyncThunk("teachersSlice/fetchTeachers", asy
 
 export const updateTeacherById = createAsyncThunk("teachersSlice/updateTeacherById", async ({ teacherId, updatedTeacher }) => {
     try {
-        const response = await axios.put(`${API_URL}/${API_LINKS.teachers}/${teacherId}`, updatedTeacher);
+        const response = await axios.put(`${API_URL}/${API_LINKS.teachers}/${teacherId}`, updatedTeacher, authHeader);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -22,7 +23,7 @@ export const updateTeacherById = createAsyncThunk("teachersSlice/updateTeacherBy
 
 export const createTeacher = createAsyncThunk("teachersSlice/createTeacher", async (newTeacher) => {
     try {
-        const response = await axios.post(`${API_URL}/${API_LINKS.teachers}`, newTeacher);
+        const response = await axios.post(`${API_URL}/${API_LINKS.teachers}`, newTeacher, authHeader);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -31,7 +32,7 @@ export const createTeacher = createAsyncThunk("teachersSlice/createTeacher", asy
 
 export const deleteTeacherById = createAsyncThunk("teachersSlice/deleteTeacherById", async (id) => {
     try {
-        await axios.delete(`${API_URL}/${API_LINKS.teachers}/${id}`);
+        await axios.delete(`${API_URL}/${API_LINKS.teachers}/${id}`, authHeader);
         return id;
     } catch (error) {
         console.log(error);

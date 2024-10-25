@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { API_LINKS, API_URL } from '../../constants/content';
 import axios from 'axios';
+import { authHeader } from "./authSlice"
 
 export const updateUserPassword = createAsyncThunk("passwordSlice/updateUserPassword", async (content) => {
     try {
-        await axios.put(`${API_URL}/${API_LINKS.passwordApi}`, content, { headers: { 'Content-Type': 'application/json' } });
+        await axios.put(`${API_URL}/${API_LINKS.passwordApi}`, content, authHeader);
     } catch (error) {
         console.log(error);
-
     }
 })
 

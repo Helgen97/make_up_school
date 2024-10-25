@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { API_LINKS, API_URL } from '../../constants/content';
 import axios from 'axios';
+import { authHeader } from "./authSlice"
 
 export const fetchBotSettings = createAsyncThunk("botSettingsSlice/fetchBotSettings", async () => {
     try {
@@ -8,17 +9,15 @@ export const fetchBotSettings = createAsyncThunk("botSettingsSlice/fetchBotSetti
         return response.data;
     } catch (error) {
         console.log(error);
-
     }
 });
 
 export const updateBotSettings = createAsyncThunk("botSettingsSlice/updateBotSettings", async (content) => {
     try {
-        const response = await axios.put(`${API_URL}/${API_LINKS.botSettings}`, content);
+        const response = await axios.put(`${API_URL}/${API_LINKS.botSettings}`, content, authHeader);
         return response.data;
     } catch (error) {
         console.log(error);
-
     }
 })
 

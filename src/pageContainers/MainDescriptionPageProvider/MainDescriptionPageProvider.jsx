@@ -1,7 +1,12 @@
 import MainDescriptionPage from "../../components/MainDescriptionPage/";
+import AuthProvider from "../../auth/AuthProvider";
 
 const MainDescriptionPageProvider = () => {
-  return <MainDescriptionPage />;
+  return (
+    <AuthProvider>
+      <MainDescriptionPage />
+    </AuthProvider>
+  );
 };
 
 export default MainDescriptionPageProvider;

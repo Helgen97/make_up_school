@@ -1,7 +1,12 @@
 import BotSettingsPage from "../../components/BotSettingsPage";
+import AuthProvider from "../../auth/AuthProvider";
 
 const BotSettingsPageProvider = () => {
-  return <BotSettingsPage />;
+  return (
+    <AuthProvider>
+      <BotSettingsPage />
+    </AuthProvider>
+  );
 };
 
 export default BotSettingsPageProvider;

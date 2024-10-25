@@ -1,9 +1,12 @@
-import IndexPage from "../../components/IndexPage"
+import IndexPage from "../../components/IndexPage";
+import AuthProvider from "../../auth/AuthProvider";
 
 const IndexPageProvider = () => {
   return (
-    <IndexPage />
-  )
-}
+    <AuthProvider>
+      <IndexPage />
+    </AuthProvider>
+  );
+};
 
-export default IndexPageProvider
+export default IndexPageProvider;
