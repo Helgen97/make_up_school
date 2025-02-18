@@ -62,9 +62,10 @@ const ContactsPage = () => {
         {!isLoading && !isError && (
           <>
             {Object.keys(contactsState).map((key) => {
-              if (key === "id") return <></>;
+              if (key === "id") return <span key={key}></span>;
               return (
                 <TextFieldImpl
+                  key={key}
                   label={labels[key]}
                   helperText={labels[key]}
                   name={key}
