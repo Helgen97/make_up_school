@@ -32,7 +32,7 @@ const PasswordSettingsPage = () => {
         <H3 content="Зміна паролю" />
 
         {isLoading && <CenteredLoader />}
-        {!isLoading && !isError && (
+        {!isLoading && (
           <>
             <TextFieldImpl
               value={rawPassword}

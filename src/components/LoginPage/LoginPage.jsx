@@ -15,7 +15,7 @@ const LoginPage = () => {
   });
 
   const { isAuth, isLoading, isError } = useSelector((state) => state.auth);
-
+  
   const dispatch = useDispatch();
 
   const processLogin = () => {
@@ -36,18 +36,20 @@ const LoginPage = () => {
       <Grid size={{ xs: 12, lg: 8 }} className="d-flex flex-column gap-3">
         <H3 content="Вхід до панелі" />
 
-        {isLoading && <CenteredLoader />}
-        {!isLoading && !isError && (
+        {isLoading && !isError && <CenteredLoader />}
+        {!isLoading && (isError || !isError) && (
           <>
             <TextFieldImpl
               value={credentials.login}
               onChange={(event) =>
                 setCredentials({ ...credentials, login: event.target.value })
               }
+              maxRows={1}
               label="Ваш логін"
               helperText="Введіть ваш логін"
             />
             <TextFieldImpl
+              maxRows={1}
               value={credentials.password}
               onChange={(event) =>
                 setCredentials({ ...credentials, password: event.target.value })
@@ -59,8 +61,7 @@ const LoginPage = () => {
         )}
 
         <CenteredButton
-          isError={isError}
-          buttonText="Вхід"
+          buttonText={isError ? "Спробуйте ще раз, неправильні дані" : "Вхід"}
           onClick={processLogin}
         />
       </Grid>

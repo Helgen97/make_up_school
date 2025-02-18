@@ -13,6 +13,11 @@ export const SIDEBAR_LINKS = [
   },
   {
     icon: InfoIcon,
+    linkText: "Контакти",
+    href: "/contacts",
+  },
+  {
+    icon: InfoIcon,
     linkText: "Інформація на сторінці",
     href: "/main",
   },
@@ -36,6 +41,7 @@ export const SIDEBAR_LINKS = [
     linkText: "Альбоми",
     href: "/albums",
   },
+
   {
     icon: SettingsIcon,
     linkText: "Налаштування бота",
@@ -53,6 +59,7 @@ export const API_LINKS = {
   schoolDescription: "api/school/1",
   courses: "api/courses",
   teachers: "api/teachers",
+  contacts: "api/contacts/1",
   albums: "api/albums",
   botSettings: "api/settings/1",
   passwordApi: "api/user",

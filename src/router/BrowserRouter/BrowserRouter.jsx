@@ -6,6 +6,10 @@ const IndexPageProvider = lazy(() =>
   import("../../pageContainers/IndexPageProvider")
 );
 
+const ContactsPageProvider = lazy(() =>
+  import("../../pageContainers/ContactsPageProvider")
+);
+
 const MainDescriptionPageProvider = lazy(() =>
   import("../../pageContainers/MainDescriptionPageProvider")
 );
@@ -54,6 +58,10 @@ const ROUTES_LIST = [
       {
         path: "main",
         element: <MainDescriptionPageProvider />,
+      },
+      {
+        path: "contacts",
+        element: <ContactsPageProvider />
       },
       {
         path: "school",

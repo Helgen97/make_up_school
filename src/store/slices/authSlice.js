@@ -3,12 +3,10 @@ import { API_URL, API_LINKS } from '../../constants/content';
 import axios from 'axios';
 
 export const logIn = createAsyncThunk("authSlice/logIn", async (credential) => {
-    try {
-        const response = await axios.post(`${API_URL}/${API_LINKS.auth}`, credential);
-        return response.data;
-    } catch (error) {
-        console.log(error);
-    }
+
+    const response = await axios.post(`${API_URL}/${API_LINKS.auth}`, credential);
+    return response.data;
+
 });
 
 export const authHeader = {
