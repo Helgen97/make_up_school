@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/settings")
 @RequiredArgsConstructor
 public class SettingsController {
-    
+
     @Autowired
     private SettingsService service;
 

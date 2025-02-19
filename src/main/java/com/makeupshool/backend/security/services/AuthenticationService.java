@@ -14,7 +14,6 @@ public class AuthenticationService {
 
     @Autowired
     private UserService userService;
-
     @Autowired
     private AuthenticationManager authenticationManager;
 

@@ -1,0 +1,1 @@
+import{S as c,a as i,u as n,r as u,T as h,j as s,U as p}from"./index-CvNCXkVt.js";const m=({children:t})=>{const{pathname:a}=c(),{isAuth:e}=i(r=>r.auth),o=n();return u.useEffect(()=>{o(h())},[]),!e&&a!=="/login"?s.jsx(p,{to:"/login"}):s.jsx(s.Fragment,{children:t})};export{m as A};

@@ -1,1 +1,0 @@
-import{Q as c,u as i,a as n,r as u,R as h,j as s,S as p}from"./index-D1eTa0Ex.js";const m=({children:t})=>{const{pathname:a}=c(),{isAuth:e}=i(r=>r.auth),o=n();return u.useEffect(()=>{o(h())},[]),!e&&a!=="/login"?s.jsx(p,{to:"/login"}):s.jsx(s.Fragment,{children:t})};export{m as A};

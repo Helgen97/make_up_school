@@ -10,7 +10,6 @@ import lombok.*;
 public class SiteUserDTO {
 
     private String login;
-
     private String password;
 
     public static SiteUserDTO of(SiteUser siteUser) {

@@ -3,7 +3,6 @@ package com.makeupshool.backend.dto;
 import com.makeupshool.backend.data.Album;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter

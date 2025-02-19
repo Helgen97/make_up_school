@@ -19,7 +19,6 @@ public class AuthController {
 
     @Autowired
     private JwtService jwtService;
-
     @Autowired
     private AuthenticationService authenticationService;
 
@@ -36,6 +35,5 @@ public class AuthController {
                 .expireIn(jwtService.getExpirationTime())
                 .build();
     }
-
 
 }
