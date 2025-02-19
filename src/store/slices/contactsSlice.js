@@ -9,6 +9,7 @@ export const fetchContacts = createAsyncThunk("contactsSlice/fetchContacts", asy
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -18,6 +19,7 @@ export const updateContacts = createAsyncThunk("contactsSlice/updateContacts", a
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 })
 

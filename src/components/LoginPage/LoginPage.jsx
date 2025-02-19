@@ -15,7 +15,7 @@ const LoginPage = () => {
   });
 
   const { isAuth, isLoading, isError } = useSelector((state) => state.auth);
-  
+
   const dispatch = useDispatch();
 
   const processLogin = () => {
@@ -37,7 +37,7 @@ const LoginPage = () => {
         <H3 content="Вхід до панелі" />
 
         {isLoading && !isError && <CenteredLoader />}
-        {!isLoading && (isError || !isError) && (
+        {!isLoading && (
           <>
             <TextFieldImpl
               value={credentials.login}
@@ -61,8 +61,9 @@ const LoginPage = () => {
         )}
 
         <CenteredButton
-          buttonText={isError ? "Спробуйте ще раз, неправильні дані" : "Вхід"}
+          isError={isError}
           onClick={processLogin}
+          buttonText={"Увійти до панелі"}
         />
       </Grid>
     </Grid>

@@ -44,11 +44,12 @@ const SchoolDescriptionPage = () => {
 
       {isLoading && <CenteredLoader />}
 
-      {!isLoading && !isError && (
+      {!isLoading && (
         <>
           <div className="border my-2 p-2">
             <TextFieldImpl
               name="ukr"
+              isMultiline
               value={descriptions.ukr.join("\n")}
               label="Опис школи на українській"
               onChange={textInputChangeHandler}
@@ -58,6 +59,7 @@ const SchoolDescriptionPage = () => {
           <div className="border my-2 p-2">
             <TextFieldImpl
               name="en"
+              isMultiline
               value={descriptions.en.join("\n")}
               label="Опис школи на англійській"
               onChange={textInputChangeHandler}

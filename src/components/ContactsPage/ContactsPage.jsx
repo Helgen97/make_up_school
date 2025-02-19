@@ -59,7 +59,7 @@ const ContactsPage = () => {
 
         {isLoading && <CenteredLoader />}
 
-        {!isLoading && !isError && (
+        {!isLoading && (
           <>
             {Object.keys(contactsState).map((key) => {
               if (key === "id") return <span key={key}></span>;

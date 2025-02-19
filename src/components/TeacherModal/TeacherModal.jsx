@@ -85,88 +85,89 @@ const TeacherModal = ({ open, onClose, edit = false }) => {
         {(isTeacherCreatingLoading || isTeacherUpdatingLoading) && (
           <CenteredLoader />
         )}
-        {!isTeacherCreatingLoading &&
-          !isTeacherCreatingError &&
-          !isTeacherUpdatingLoading &&
-          !isTeacherUpdatingError && (
-            <ModalPaperWrapper>
-              <h4 className="text-center">
-                {!edit
-                  ? "Додавання викладача"
-                  : "Редагування інформації про викладача"}
-              </h4>
-              <TextFieldImpl
-                name="imageUrl"
-                label="Посилання на фото викладача"
-                helperText="Вставте посилання на фото викладача"
-                value={teacher.imageUrl}
-                onChange={(event) =>
-                  setTeacher({ ...teacher, imageUrl: event.target.value })
-                }
-              />
-              <TextFieldImpl
-                name="teacherName"
-                label="ПІБ викладача UA"
-                helperText="Введіть ПІБ на українській"
-                value={teacher.ukr.teacherName}
-                onChange={onChangeUAHandler}
-              />
-              <TextFieldImpl
-                name="teacherName"
-                label="ПІБ викладача EN"
-                helperText="Введіть ПІБ на англійській"
-                value={teacher.en.teacherName}
-                onChange={onChangeENHandler}
-              />
-              <TextFieldImpl
-                name="teacherOccupation"
-                label="Посада викладача UA"
-                helperText="Введіть посаду викладача на українській"
-                value={teacher.ukr.teacherOccupation}
-                onChange={onChangeUAHandler}
-              />
-              <TextFieldImpl
-                name="teacherOccupation"
-                label="Посада викладача EN"
-                helperText="Введіть посаду викладача на англійській"
-                value={teacher.en.teacherOccupation}
-                onChange={onChangeENHandler}
-              />
-              <TextFieldImpl
-                name="teacherFacts"
-                label="Найголовніші факти про викладача UA"
-                helperText="Введіть найголовніші факти про викладача на українській, кожен з нового рядка!"
-                value={teacher.ukr.teacherFacts.join("\n")}
-                onChange={onChangeUAHandler}
-              />
-              <TextFieldImpl
-                name="teacherFacts"
-                label="Найголовніші факти про викладача EN"
-                helperText="Введіть найголовніші факти про викладача на англійській, кожен з нового рядка!"
-                value={teacher.en.teacherFacts.join("\n")}
-                onChange={onChangeENHandler}
-              />
-              <TextFieldImpl
-                name="teacherAchievements"
-                label="Досягнення викладача UA"
-                helperText="Введіть досягнення викладача на українській, кожне з нового рядка!"
-                value={teacher.ukr.teacherAchievements.join("\n")}
-                onChange={onChangeUAHandler}
-              />
-              <TextFieldImpl
-                name="teacherAchievements"
-                label="Досягнення викладача EN"
-                helperText="Введіть досягнення викладача на англійській, кожне з нового рядка!"
-                value={teacher.en.teacherAchievements.join("\n")}
-                onChange={onChangeENHandler}
-              />
-              <CenteredButton
-                isError={isTeacherCreatingError || isTeacherUpdatingError}
-                buttonText={!edit ? "Додати викладача" : ""}
-                onClick={clickHandler}
-              />
-            </ModalPaperWrapper>
-          )}
+        {!isTeacherCreatingLoading && !isTeacherUpdatingLoading && (
+          <ModalPaperWrapper>
+            <h4 className="text-center">
+              {!edit
+                ? "Додавання викладача"
+                : "Редагування інформації про викладача"}
+            </h4>
+            <TextFieldImpl
+              name="imageUrl"
+              label="Посилання на фото викладача"
+              helperText="Вставте посилання на фото викладача"
+              value={teacher.imageUrl}
+              onChange={(event) =>
+                setTeacher({ ...teacher, imageUrl: event.target.value })
+              }
+            />
+            <TextFieldImpl
+              name="teacherName"
+              label="ПІБ викладача UA"
+              helperText="Введіть ПІБ на українській"
+              value={teacher.ukr.teacherName}
+              onChange={onChangeUAHandler}
+            />
+            <TextFieldImpl
+              name="teacherName"
+              label="ПІБ викладача EN"
+              helperText="Введіть ПІБ на англійській"
+              value={teacher.en.teacherName}
+              onChange={onChangeENHandler}
+            />
+            <TextFieldImpl
+              name="teacherOccupation"
+              label="Посада викладача UA"
+              helperText="Введіть посаду викладача на українській"
+              value={teacher.ukr.teacherOccupation}
+              onChange={onChangeUAHandler}
+            />
+            <TextFieldImpl
+              name="teacherOccupation"
+              label="Посада викладача EN"
+              helperText="Введіть посаду викладача на англійській"
+              value={teacher.en.teacherOccupation}
+              onChange={onChangeENHandler}
+            />
+            <TextFieldImpl
+              name="teacherFacts"
+              isMultiline
+              label="Найголовніші факти про викладача UA"
+              helperText="Введіть найголовніші факти про викладача на українській, кожен з нового рядка!"
+              value={teacher.ukr.teacherFacts.join("\n")}
+              onChange={onChangeUAHandler}
+            />
+            <TextFieldImpl
+              name="teacherFacts"
+              isMultiline
+              label="Найголовніші факти про викладача EN"
+              helperText="Введіть найголовніші факти про викладача на англійській, кожен з нового рядка!"
+              value={teacher.en.teacherFacts.join("\n")}
+              onChange={onChangeENHandler}
+            />
+            <TextFieldImpl
+              name="teacherAchievements"
+              isMultiline
+              label="Досягнення викладача UA"
+              helperText="Введіть досягнення викладача на українській, кожне з нового рядка!"
+              value={teacher.ukr.teacherAchievements.join("\n")}
+              onChange={onChangeUAHandler}
+            />
+            <TextFieldImpl
+              name="teacherAchievements"
+              isMultiline
+              label="Досягнення викладача EN"
+              helperText="Введіть досягнення викладача на англійській, кожне з нового рядка!"
+              value={teacher.en.teacherAchievements.join("\n")}
+              onChange={onChangeENHandler}
+            />
+            <CenteredButton
+              isError={isTeacherCreatingError || isTeacherUpdatingError}
+              buttonText={!edit ? "Додати викладача" : ""}
+              onClick={clickHandler}
+            />
+          </ModalPaperWrapper>
+        )}
       </span>
     </ModalWrapper>
   );

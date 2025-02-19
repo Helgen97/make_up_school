@@ -9,6 +9,7 @@ export const fetchCourses = createAsyncThunk("coursesSlice/fetchCourses", async 
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -18,6 +19,7 @@ export const updateCourseById = createAsyncThunk("coursesSlice/updateCourseById"
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -27,6 +29,7 @@ export const createCourse = createAsyncThunk("coursesSlice/createCourse", async 
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -36,6 +39,7 @@ export const deleteCourseById = createAsyncThunk("coursesSlice/deleteCourseById"
         return id;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 })
 

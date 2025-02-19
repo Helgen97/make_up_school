@@ -9,6 +9,7 @@ export const fetchMainDescription = createAsyncThunk("mainDescriptionSlice/fetch
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -18,6 +19,7 @@ export const updateMainDescription = createAsyncThunk("mainDescriptionSlice/upda
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 })
 

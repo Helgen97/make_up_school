@@ -58,8 +58,10 @@ const CoursePage = () => {
   return (
     <div>
       <H3 content="Список курсів" />
+
       {isCoursesLoading && <CenteredLoader />}
-      {!isCoursesLoading && !isCoursesFetchError && (
+
+      {!isCoursesLoading && (
         <Grid container size={12} spacing={3} className="my-3">
           <Grid size={{ xs: 12, sm: 6, lg: 4 }}>
             <CardWithAddButton onClick={addCourseButtonHandler} />

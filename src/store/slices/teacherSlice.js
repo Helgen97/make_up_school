@@ -9,6 +9,7 @@ export const fetchTeachers = createAsyncThunk("teachersSlice/fetchTeachers", asy
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -18,6 +19,7 @@ export const updateTeacherById = createAsyncThunk("teachersSlice/updateTeacherBy
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -27,6 +29,7 @@ export const createTeacher = createAsyncThunk("teachersSlice/createTeacher", asy
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -36,6 +39,7 @@ export const deleteTeacherById = createAsyncThunk("teachersSlice/deleteTeacherBy
         return id;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 })
 

@@ -45,7 +45,7 @@ const MainDescriptionPage = () => {
 
       {isLoading && <CenteredLoader />}
 
-      {!isLoading && !isError && (
+      {!isLoading && (
         <>
           <TextFieldImpl
             name={"ukr"}

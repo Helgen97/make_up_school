@@ -9,6 +9,7 @@ export const fetchAlbums = createAsyncThunk("albumsSlice/fetchAlbums", async () 
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -18,6 +19,7 @@ export const updateAlbumById = createAsyncThunk("albumsSlice/updateAlbumById", a
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -27,6 +29,7 @@ export const createAlbum = createAsyncThunk("albumsSlice/createAlbum", async (ne
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -36,6 +39,7 @@ export const deleteAlbumById = createAsyncThunk("albumsSlice/deleteAlbumById", a
         return id;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 })
 

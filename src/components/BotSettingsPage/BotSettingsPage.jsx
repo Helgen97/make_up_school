@@ -4,15 +4,17 @@ import TextFieldImpl from "../TextFieldImpl";
 import CenteredButton from "../CenteredButton";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { fetchBotSettings, updateBotSettings } from "../../store/slices/botSettingsSlice";
+import {
+  fetchBotSettings,
+  updateBotSettings,
+} from "../../store/slices/botSettingsSlice";
 import CenteredLoader from "../CenteredLoader";
 
 const BotSettingsPage = () => {
-  const [ currentSettings, setSettings] = useState({
+  const [currentSettings, setSettings] = useState({
     botToken: "",
     chatId: "",
   });
-
 
   const { botSettings, isLoading, isError } = useSelector(
     (state) => state.botSettings
@@ -25,12 +27,12 @@ const BotSettingsPage = () => {
   }, []);
 
   useEffect(() => {
-    setSettings(botSettings)
-  }, [botSettings])
+    setSettings(botSettings);
+  }, [botSettings]);
 
   const updateSetting = () => {
     dispatch(updateBotSettings(currentSettings));
-  }
+  };
 
   return (
     <Grid
@@ -41,17 +43,24 @@ const BotSettingsPage = () => {
       <Grid size={{ xs: 12, lg: 8 }} className="d-flex flex-column gap-3">
         <H3 content="Налаштування бота" />
         {isLoading && <CenteredLoader />}
-        {!isLoading && !isError && (
+        {!isLoading && (
           <>
             <TextFieldImpl
               value={currentSettings.botToken}
-              onChange={(event) => setSettings({...currentSettings, botToken: event.target.value})}
+              onChange={(event) =>
+                setSettings({
+                  ...currentSettings,
+                  botToken: event.target.value,
+                })
+              }
               label="Зміна Token бота"
               helperText="Введіть новий Bot_Token на який будуть приходити повідомлення"
             />
             <TextFieldImpl
               value={currentSettings.chatId}
-              onChange={(event) => setSettings({...currentSettings, chatId: event.target.value})}
+              onChange={(event) =>
+                setSettings({ ...currentSettings, chatId: event.target.value })
+              }
               label="Зміна чат Id бота"
               helperText="Введіть новий ChatId на який будуть приходити повідомлення"
             />

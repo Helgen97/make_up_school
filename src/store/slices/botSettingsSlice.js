@@ -9,6 +9,7 @@ export const fetchBotSettings = createAsyncThunk("botSettingsSlice/fetchBotSetti
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -18,6 +19,7 @@ export const updateBotSettings = createAsyncThunk("botSettingsSlice/updateBotSet
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 })
 

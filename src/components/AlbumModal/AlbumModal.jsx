@@ -64,72 +64,68 @@ const AlbumModal = ({ open, onClose, edit = false }) => {
         {(isAlbumCreatingLoading || isAlbumUpdatingLoading) && (
           <CenteredLoader />
         )}
-        {!isAlbumCreatingLoading &&
-          !isAlbumCreatingError &&
-          !isAlbumUpdatingLoading &&
-          !isAlbumUpdatingError && (
-            <ModalPaperWrapper>
-              <h4 className="text-center">
-                {!edit
-                  ? "Додавання альбому"
-                  : "Редагування інформації в альбомі"}
-              </h4>
-              <TextFieldImpl
-                name="imageUrl"
-                label="Посилання на заставку альбому"
-                helperText="Вставте посилання на заставку альбому"
-                value={album.imageUrl}
-                onChange={(event) =>
-                  setAlbum({ ...album, imageUrl: event.target.value })
-                }
-              />
-              <TextFieldImpl
-                name="albumTitle"
-                label="Назва альбому UA"
-                helperText="Введіть назву альбому на українській"
-                value={album.ukr.albumTitle}
-                onChange={onChangeUAHandler}
-              />
-              <TextFieldImpl
-                name="albumTitle"
-                label="Назва альбому EN"
-                helperText="Введіть назву альбому на англійській"
-                value={album.en.albumTitle}
-                onChange={onChangeENHandler}
-              />
-              <TextFieldImpl
-                name="albumDescription"
-                label="Короткий опис альбому UA"
-                helperText="Введіть короткий опис альбому на українській"
-                value={album.ukr.albumDescription}
-                onChange={onChangeUAHandler}
-              />
-              <TextFieldImpl
-                name="albumDescription"
-                label="Короткий опис альбому EN"
-                helperText="Введіть короткий опис альбому на англійській"
-                value={album.en.albumDescription}
-                onChange={onChangeENHandler}
-              />
-              <TextFieldImpl
-                name="photoUrls"
-                label="Список посилань на фото"
-                helperText="Введіть список посилань на кожне фото з альбому, кожне з нового рядка!"
-                value={album.photoUrls.join("\n")}
-                onChange={(event) =>
-                  setAlbum({
-                    ...album,
-                    photoUrls: event.target.value.split("\n"),
-                  })
-                }
-              />
-              <CenteredButton
-                isError={isAlbumCreatingError || isAlbumUpdatingError}
-                buttonText={!edit ? "Додати альбом" : ""}
-                onClick={clickHandler}
-              />
-            </ModalPaperWrapper>
-          )}
+        {!isAlbumCreatingLoading && !isAlbumUpdatingLoading && (
+          <ModalPaperWrapper>
+            <h4 className="text-center">
+              {!edit ? "Додавання альбому" : "Редагування інформації в альбомі"}
+            </h4>
+            <TextFieldImpl
+              name="imageUrl"
+              label="Посилання на заставку альбому"
+              helperText="Вставте посилання на заставку альбому"
+              value={album.imageUrl}
+              onChange={(event) =>
+                setAlbum({ ...album, imageUrl: event.target.value })
+              }
+            />
+            <TextFieldImpl
+              name="albumTitle"
+              label="Назва альбому UA"
+              helperText="Введіть назву альбому на українській"
+              value={album.ukr.albumTitle}
+              onChange={onChangeUAHandler}
+            />
+            <TextFieldImpl
+              name="albumTitle"
+              label="Назва альбому EN"
+              helperText="Введіть назву альбому на англійській"
+              value={album.en.albumTitle}
+              onChange={onChangeENHandler}
+            />
+            <TextFieldImpl
+              name="albumDescription"
+              label="Короткий опис альбому UA"
+              helperText="Введіть короткий опис альбому на українській"
+              value={album.ukr.albumDescription}
+              onChange={onChangeUAHandler}
+            />
+            <TextFieldImpl
+              name="albumDescription"
+              label="Короткий опис альбому EN"
+              helperText="Введіть короткий опис альбому на англійській"
+              value={album.en.albumDescription}
+              onChange={onChangeENHandler}
+            />
+            <TextFieldImpl
+              name="photoUrls"
+              isMultiline
+              label="Список посилань на фото"
+              helperText="Введіть список посилань на кожне фото з альбому, кожне з нового рядка!"
+              value={album.photoUrls.join("\n")}
+              onChange={(event) =>
+                setAlbum({
+                  ...album,
+                  photoUrls: event.target.value.split("\n"),
+                })
+              }
+            />
+            <CenteredButton
+              isError={isAlbumCreatingError || isAlbumUpdatingError}
+              buttonText={!edit ? "Додати альбом" : ""}
+              onClick={clickHandler}
+            />
+          </ModalPaperWrapper>
+        )}
       </span>
     </ModalWrapper>
   );

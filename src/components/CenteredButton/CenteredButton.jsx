@@ -10,7 +10,7 @@ const CenteredButton = ({ onClick, isError, buttonText }) => {
         onClick={onClick}
       >
         {isError
-          ? "Сталася помилка, перезавантажте сторінку!"
+          ? "Сталася помилка, оновіть дані та спробуйте ще раз"
           : buttonText || "Зберегти зміни"}
       </Button>
     </div>

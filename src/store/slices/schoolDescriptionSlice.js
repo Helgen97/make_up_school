@@ -9,6 +9,7 @@ export const fetchSchoolDescriptions = createAsyncThunk("schoolDescriptions/fetc
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 
@@ -18,6 +19,7 @@ export const updateSchoolDescriptions = createAsyncThunk("schoolDescriptions/upd
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 })
 

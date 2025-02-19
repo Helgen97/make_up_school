@@ -8,6 +8,7 @@ export const updateUserPassword = createAsyncThunk("passwordSlice/updateUserPass
         await axios.put(`${API_URL}/${API_LINKS.passwordApi}`, content, authHeader);
     } catch (error) {
         console.log(error);
+        throw error;
     }
 })
 

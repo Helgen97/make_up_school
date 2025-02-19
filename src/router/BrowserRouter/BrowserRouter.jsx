@@ -61,7 +61,7 @@ const ROUTES_LIST = [
       },
       {
         path: "contacts",
-        element: <ContactsPageProvider />
+        element: <ContactsPageProvider />,
       },
       {
         path: "school",
