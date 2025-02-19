@@ -11,6 +11,9 @@ const CallMeBoxModal = ({ isCallMeBoxActive }) => {
   const { isLoading, isError, isSuccess } = useSelector(
     (state) => state.contacts
   );
+
+  const { phone } = useSelector((state) => state.schoolContacts.schoolContacts);
+
   const dispatch = useDispatch();
 
   const sendContacts = (contacts) => {
@@ -30,7 +33,7 @@ const CallMeBoxModal = ({ isCallMeBoxActive }) => {
 
       <div>
         <p>{formatMessage({ id: "callMeBox_footer" })}</p>
-        <a href="tel:+380 (67) 566-11-77">+380 (67) 566-11-77</a>
+        <a href={`tel:${phone}`}>{phone}</a>
       </div>
     </div>
   );
