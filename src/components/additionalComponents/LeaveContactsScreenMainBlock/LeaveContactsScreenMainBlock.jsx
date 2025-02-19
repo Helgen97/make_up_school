@@ -6,7 +6,7 @@ import CallMeErrorBlock from "../CallMeErrorBlock";
 import CallMeSuccessBlock from "../CallMeSuccessBlock";
 import Loader from "../Loader";
 
-const LeaveContactsScreenMainBlock = () => {
+const LeaveContactsScreenMainBlock = ({ idName }) => {
   const { isLoading, isError, isSuccess } = useSelector(
     (state) => state.contacts
   );
@@ -23,7 +23,10 @@ const LeaveContactsScreenMainBlock = () => {
       {isError && <CallMeErrorBlock />}
       {isSuccess && <CallMeSuccessBlock />}
       {!isLoading && !isSuccess && (
-        <LeaveContactsScreenForm sendContactsFunction={sendContacts} />
+        <LeaveContactsScreenForm
+          idName={idName}
+          sendContactsFunction={sendContacts}
+        />
       )}
     </div>
   );

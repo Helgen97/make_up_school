@@ -11,10 +11,10 @@ const IndexPage = () => {
       <MainSection />
       <AboutSchoolSection />
       <CoursesScreen />
-      <LeaveContactsScreen />
+      <LeaveContactsScreen idName="contactsScreen1" />
       <TeacherScreen />
       <PortfolioScreen />
-      <LeaveContactsScreen />
+      <LeaveContactsScreen idName="contactsScreen2" />
     </>
   );
 };

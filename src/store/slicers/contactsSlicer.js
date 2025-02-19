@@ -8,6 +8,7 @@ export const postSendContacts = createAsyncThunk("contactSlicer/postSendContacts
         await axios.post(`${API_URL}/${API_LINKS.clients}`, contacts)
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 

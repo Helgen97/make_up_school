@@ -9,6 +9,7 @@ export const fetchCourses = createAsyncThunk("coursesSlicer/fetchCourses", async
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 

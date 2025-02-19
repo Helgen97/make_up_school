@@ -48,7 +48,8 @@ export const API_LINKS = {
     courses: "api/courses",
     teachers: "api/teachers",
     albums: "api/albums",
-    clients: "api/clients"
+    clients: "api/clients",
+    contacts: "api/contacts/1"
 }
 
 export const API_URL = import.meta.env.VITE_API_URL;

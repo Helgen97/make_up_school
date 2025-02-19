@@ -6,8 +6,6 @@ export const MESSAGES = {
         "teachers": "Викладачі",
         "portfolio": "Портфоліо",
         "contacts": "Контакти",
-        "working_hours": "Пн—Нд: з 09:00 до 20:00",
-        "address": "м.Київ, вул. Максимовича, 24Б",
         "callMeBox_title": "Залиште свій номер і ми вам зателефонуємо",
         "callMeBox_footer": "Або ви можете зателефонувати нам:",
         "call_me_back": "Передзвоніть",
@@ -34,7 +32,8 @@ export const MESSAGES = {
         "portfolio_second_text": "Це дасть вам змогу більше розуміти рівень, який демонструють учні після навчання.",
         "explore": "Переглянути...",
         "our_teachers": "Наші викладачі",
-        "404": "Сторінку не знайдено!"
+        "404": "Сторінку не знайдено!",
+        "empty_phone": "Відсутній номер!"
     },
     "en": {
         "home": "Home",
@@ -43,8 +42,6 @@ export const MESSAGES = {
         "teachers": "Teachers",
         "portfolio": "Portfolio",
         "contacts": "Contacts",
-        "working_hours": "Mon - Sun: з 09:00 до 20:00",
-        "address": "Kyiv, Mykhaila Maksymovycha St, 24B",
         "callMeBox_title": "Leave your contact and we will call you back",
         "callMeBox_footer": "Or you can call us:",
         "call_me_back": "Call me back",
@@ -72,5 +69,6 @@ export const MESSAGES = {
         "explore": "Explore...",
         "our_teachers": "Our teachers",
         "404": "Page not found!",
+        "empty_phone": "Empty phone"
     }
 }

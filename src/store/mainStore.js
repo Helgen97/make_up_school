@@ -6,6 +6,7 @@ import teacherReducer from "./slicers/teacherSlicer";
 import schoolDescriptionReducer from "./slicers/schoolDescriptionSlicer"
 import mainDescriptionReducer from "./slicers/mainDescriptionSlicer";
 import coursesReducer from './slicers/coursesSlicer';
+import schoolContactsReducer from "./slicers/schoolContacts";
 
 export default configureStore({
     reducer: {
@@ -15,6 +16,7 @@ export default configureStore({
         teachers: teacherReducer,
         schoolDescription: schoolDescriptionReducer,
         mainDescription: mainDescriptionReducer,
-        courses: coursesReducer
+        courses: coursesReducer,
+        schoolContacts: schoolContactsReducer
     },
 })

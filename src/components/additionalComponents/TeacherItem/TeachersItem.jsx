@@ -6,7 +6,11 @@ const TeachersItem = ({ teacherInfo }) => {
   return (
     <div className="teacher-item">
       <div className="teacher-photo_box">
-        <img src={teacherInfo.imageUrl} alt={teacherInfo.teacherName} loading="lazy"/>
+        <img
+          src={teacherInfo.imageUrl}
+          alt={teacherInfo.teacherName}
+          loading="lazy"
+        />
       </div>
       <h2 className="teacher-name">{teacherInfo[locale].teacherName}</h2>
       <p className="teacher-occupation">

@@ -9,6 +9,7 @@ export const fetchMainDescription = createAsyncThunk("mainDescriptionSlicer/fetc
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 });
 

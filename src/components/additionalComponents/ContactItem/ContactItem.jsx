@@ -3,7 +3,7 @@ const ContactItem = ({ textPosition, itemSvg, itemHref, itemText }) => {
     <div className={"contact-item " + textPosition}>
       {itemSvg}
       {itemHref ? (
-        <a href={itemHref} className="contact-link">
+        <a href={itemHref} target="_blank" className="contact-link">
           {itemText}
         </a>
       ) : (

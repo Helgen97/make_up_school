@@ -4,51 +4,78 @@ import MarkerSvg from "../../svgComponents/MarkerSvg";
 import InstagramSvg from "../../svgComponents/InstagramSvg";
 import ContactItem from "../ContactItem";
 import { useIntl } from "react-intl";
+import { useDispatch, useSelector } from "react-redux";
+import Loader from "../Loader";
+import { useCallback, useEffect } from "react";
+import { fetchSchoolContacts } from "../../../store/slicers/schoolContacts";
 
 const ContactItems = () => {
-  const { formatMessage } = useIntl();
+  const { locale } = useIntl();
 
-  const contactItems = [
-    {
-      textPosition: "right-text",
-      itemSvg: <PhoneSvg />,
-      itemHref: "tel:+380675661177",
-      itemText: "+380 (67) 566-11-77",
+  const dispatch = useDispatch();
+
+  const {
+    schoolContacts: {
+      id,
+      phone,
+      workingHoursEn,
+      workingHoursUA,
+      addressEn,
+      addressUa,
+      instagram,
     },
-    {
-      textPosition: "left-text",
-      itemSvg: <ClockSvg />,
-      itemHref: "",
-      itemText: formatMessage({ id: "working_hours" }),
-    },
-    {
-      textPosition: "right-text",
-      itemSvg: <MarkerSvg />,
-      itemHref:
-        "https://www.google.com/maps/dir//Kyiv,%20Mykhaila%20Maksymovycha%20St,%2024B",
-      itemText: formatMessage({ id: "address" }),
-    },
-    {
-      textPosition: "left-text",
-      itemSvg: <InstagramSvg />,
-      itemHref: "https://www.instagram.com/elena_bulakh_makeup/",
-      itemText: "@elena_bulakh_makeup",
-    },
-  ];
+    isLoading,
+  } = useSelector((state) => state.schoolContacts);
+
+  useEffect(() => {
+    dispatch(fetchSchoolContacts());
+  }, []);
+
+  const getContactItems = useCallback(() => {
+    return [
+      {
+        textPosition: "right-text",
+        itemSvg: <PhoneSvg />,
+        itemHref: `tel:${phone}`,
+        itemText: phone,
+      },
+      {
+        textPosition: "left-text",
+        itemSvg: <ClockSvg />,
+        itemHref: "",
+        itemText: locale === "en" ? workingHoursEn : workingHoursUA,
+      },
+      {
+        textPosition: "right-text",
+        itemSvg: <MarkerSvg />,
+        itemHref: `https://www.google.com/maps/dir//${addressEn}`,
+        itemText: locale === "en" ? addressEn : addressUa,
+      },
+      {
+        textPosition: "left-text",
+        itemSvg: <InstagramSvg />,
+        itemHref: `https://www.instagram.com/${instagram.replace("@", "")}/`,
+        itemText: instagram,
+      },
+    ];
+  }, [isLoading, locale]);
 
   return (
     <div className="contact-items">
-      {contactItems.map((contactItem) => {
-        return (
-          <ContactItem
-            key={contactItem.itemText}
-            textPosition={contactItem.textPosition}
-            itemSvg={contactItem.itemSvg}
-            itemHref={contactItem.itemHref}
-            itemText={contactItem.itemText}
-          />
-        );
-      })}
+      {isLoading && <Loader />}
+
+      {!isLoading &&
+        getContactItems().map((contactItem) => {
+          return (
+            <ContactItem
+              key={contactItem.itemText}
+              textPosition={contactItem.textPosition}
+              itemSvg={contactItem.itemSvg}
+              itemHref={contactItem.itemHref}
+              itemText={contactItem.itemText}
+            />
+          );
+        })}
     </div>
   );
 };

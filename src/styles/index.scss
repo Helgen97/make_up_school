@@ -136,6 +136,11 @@ input {
   }
 }
 
+.tooltip {
+  background-color: $color-rose !important;
+  color: $color-white !important;
+}
+
 section,
 main {
   display: grid;

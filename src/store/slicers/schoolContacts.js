@@ -2,10 +2,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { API_URL, API_LINKS } from "../../constants/content";
 import axios from 'axios';
 
-
-export const fetchSchoolDescription = createAsyncThunk("schoolDescriptionSlicer/fetchSchoolDescription", async () => {
+export const fetchSchoolContacts = createAsyncThunk("schoolContactsSlicer/fetchSchoolContacts", async () => {
     try {
-        const response = await axios.get(`${API_URL}/${API_LINKS.schoolDescription}`);
+        const response = await axios.get(`${API_URL}/${API_LINKS.contacts}`);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -13,12 +12,17 @@ export const fetchSchoolDescription = createAsyncThunk("schoolDescriptionSlicer/
     }
 });
 
-export const schoolDescriptionSlicer = createSlice({
-    name: 'schoolDescriptionSlicer',
+export const schoolContactsSlicer = createSlice({
+    name: 'schoolContactsSlicer',
     initialState: {
-        loadedDescription: {
-            "ukr": [],
-            "en": []
+        schoolContacts: {
+            id: 1,
+            phone: "",
+            workingHoursEn: "",
+            workingHoursUA: "",
+            addressEn: "",
+            addressUa: "",
+            instagram: "",
         },
         isLoading: false,
         isError: false,
@@ -26,19 +30,19 @@ export const schoolDescriptionSlicer = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(fetchSchoolDescription.pending, (state) => {
+            .addCase(fetchSchoolContacts.pending, (state) => {
                 return {
                     ...state,
                     isLoading: true
                 }
-            }).addCase(fetchSchoolDescription.fulfilled, (state, action) => {
+            }).addCase(fetchSchoolContacts.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    loadedDescription: action.payload,
+                    schoolContacts: action.payload,
                     isLoading: false,
                     isError: false,
                 }
-            }).addCase(fetchSchoolDescription.rejected, (state) => {
+            }).addCase(fetchSchoolContacts.rejected, (state) => {
                 return {
                     ...state,
                     isLoading: false,
@@ -48,4 +52,4 @@ export const schoolDescriptionSlicer = createSlice({
     }
 })
 
-export default schoolDescriptionSlicer.reducer
+export default schoolContactsSlicer.reducer
