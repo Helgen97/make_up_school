@@ -15,7 +15,7 @@ export const fetchContacts = createAsyncThunk("contactsSlice/fetchContacts", asy
 
 export const updateContacts = createAsyncThunk("contactsSlice/updateContacts", async (content) => {
     try {
-        const response = await axios.put(`${API_URL}/${API_LINKS.contacts}`, content, authHeader);
+        const response = await axios.put(`${API_URL}/${API_LINKS.contacts}`, content, authHeader());
         return response.data;
     } catch (error) {
         console.log(error);

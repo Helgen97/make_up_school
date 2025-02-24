@@ -15,7 +15,7 @@ export const fetchMainDescription = createAsyncThunk("mainDescriptionSlice/fetch
 
 export const updateMainDescription = createAsyncThunk("mainDescriptionSlice/updateMainDescription", async (content) => {
     try {
-        const response = await axios.put(`${API_URL}/${API_LINKS.mainDescription}`, content, authHeader);
+        const response = await axios.put(`${API_URL}/${API_LINKS.mainDescription}`, content, authHeader());
         return response.data;
     } catch (error) {
         console.log(error);

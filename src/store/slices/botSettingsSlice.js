@@ -15,7 +15,7 @@ export const fetchBotSettings = createAsyncThunk("botSettingsSlice/fetchBotSetti
 
 export const updateBotSettings = createAsyncThunk("botSettingsSlice/updateBotSettings", async (content) => {
     try {
-        const response = await axios.put(`${API_URL}/${API_LINKS.botSettings}`, content, authHeader);
+        const response = await axios.put(`${API_URL}/${API_LINKS.botSettings}`, content, authHeader());
         return response.data;
     } catch (error) {
         console.log(error);

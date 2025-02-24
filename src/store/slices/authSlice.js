@@ -13,10 +13,12 @@ export const logIn = createAsyncThunk("authSlice/logIn", async (credential) => {
 
 });
 
-export const authHeader = {
-    headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}`,
-        'Content-Type': 'application/json',
+export const authHeader = () => {
+    return {
+        headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}`,
+            'Content-Type': 'application/json',
+        }
     }
 }
 

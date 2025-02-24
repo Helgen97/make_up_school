@@ -15,7 +15,7 @@ export const fetchSchoolDescriptions = createAsyncThunk("schoolDescriptions/fetc
 
 export const updateSchoolDescriptions = createAsyncThunk("schoolDescriptions/updateSchoolDescriptions", async (content) => {
     try {
-        const response = await axios.put(`${API_URL}/${API_LINKS.schoolDescription}`, content, authHeader);
+        const response = await axios.put(`${API_URL}/${API_LINKS.schoolDescription}`, content, authHeader());
         return response.data;
     } catch (error) {
         console.log(error);

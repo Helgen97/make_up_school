@@ -5,7 +5,7 @@ import { authHeader } from "./authSlice"
 
 export const updateUserPassword = createAsyncThunk("passwordSlice/updateUserPassword", async (content) => {
     try {
-        await axios.put(`${API_URL}/${API_LINKS.passwordApi}`, content, authHeader);
+        await axios.put(`${API_URL}/${API_LINKS.passwordApi}`, content, authHeader());
     } catch (error) {
         console.log(error);
         throw error;

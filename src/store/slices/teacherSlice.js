@@ -15,7 +15,7 @@ export const fetchTeachers = createAsyncThunk("teachersSlice/fetchTeachers", asy
 
 export const updateTeacherById = createAsyncThunk("teachersSlice/updateTeacherById", async ({ teacherId, updatedTeacher }) => {
     try {
-        const response = await axios.put(`${API_URL}/${API_LINKS.teachers}/${teacherId}`, updatedTeacher, authHeader);
+        const response = await axios.put(`${API_URL}/${API_LINKS.teachers}/${teacherId}`, updatedTeacher, authHeader());
         return response.data;
     } catch (error) {
         console.log(error);
@@ -25,7 +25,7 @@ export const updateTeacherById = createAsyncThunk("teachersSlice/updateTeacherBy
 
 export const createTeacher = createAsyncThunk("teachersSlice/createTeacher", async (newTeacher) => {
     try {
-        const response = await axios.post(`${API_URL}/${API_LINKS.teachers}`, newTeacher, authHeader);
+        const response = await axios.post(`${API_URL}/${API_LINKS.teachers}`, newTeacher, authHeader());
         return response.data;
     } catch (error) {
         console.log(error);
@@ -35,7 +35,7 @@ export const createTeacher = createAsyncThunk("teachersSlice/createTeacher", asy
 
 export const deleteTeacherById = createAsyncThunk("teachersSlice/deleteTeacherById", async (id) => {
     try {
-        await axios.delete(`${API_URL}/${API_LINKS.teachers}/${id}`, authHeader);
+        await axios.delete(`${API_URL}/${API_LINKS.teachers}/${id}`, authHeader());
         return id;
     } catch (error) {
         console.log(error);
